@@ -19,6 +19,11 @@ const rootReducer = (state = initialState, action) => {
       parsedText: action.payload
     }
 
+    case "CLEAR_IMGDATA":
+    return {
+      imgData: null
+    }
+
     default:
     return state
   }

@@ -23,7 +23,7 @@ class CapturePhoto extends Component {
     }
 
     return (
-      <div>
+      <div className="Camera">
         <Webcam audio={false} ref={this.setRef} screenshotFormat="image/jpeg" videoConstraints={videoConstraints}/>
         <br/>
         <button onClick={this.capture}>Take Photo</button>

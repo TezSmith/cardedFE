@@ -1,17 +1,21 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import {convertImg} from '../actions'
+import {retakePhoto} from '../actions'
 
 class NewCard extends Component {
 
-  render() {
 
+  render() {
 
     return (
       <div>
         <img src={this.props.imgData} alt=""/>
-        <br/>
-        <h3>{this.props.parsedText}</h3>
+        <div className="newCard">
+         <h3 id="cardText">{this.props.parsedText}</h3>
+        </div>
+        <button onClick={this.retakePhoto}>Retake</button>
+        <button>Save</button>
+        <button>Edit</button>
       </div>
     )
   }
@@ -25,4 +29,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {convertImg})(NewCard)
+export default connect(mapStateToProps, {retakePhoto})(NewCard)

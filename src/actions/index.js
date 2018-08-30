@@ -26,9 +26,17 @@ export function convertImg(imageSrc) {
 
        $.ajax(settings).done((response) => {
        let resData = JSON.parse(response)
-       let parsedText = resData.ParsedResults[0].ParsedText
+       let text = resData.ParsedResults[0].ParsedText
+       let parsedText = text.split(/((?:\w+ ){5})/g).filter(Boolean).join("\n");
        dispatch({type: "CHANGE_PARSEDTEXT", payload: parsedText})
      })
+   }
+ }
+
+ export function retakePhoto() {
+   return {
+     type: "CLEAR_IMGDATA",
+     payload: null
    }
  }
 
