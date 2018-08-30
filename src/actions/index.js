@@ -1,16 +1,10 @@
 import MYAPI from '../connectAPI.js'
 import $ from 'jquery'
 
-export function setImgData(imageSrc) {
-  return {
-    type: "CHANGE_IMGDATA",
-    payload: imageSrc
-  }
-}
-
 export function convertImg(imageSrc) {
-
   return dispatch => {
+
+    dispatch({type: "CHANGE_IMGDATA", payload: imageSrc})
 
     let form = new FormData()
     form.append('base64Image', imageSrc)
@@ -30,7 +24,7 @@ export function convertImg(imageSrc) {
       "data": form
     }
 
-        $.ajax(settings).done((response) => {
+       $.ajax(settings).done((response) => {
        let resData = JSON.parse(response)
        let parsedText = resData.ParsedResults[0].ParsedText
        dispatch({type: "CHANGE_PARSEDTEXT", payload: parsedText})

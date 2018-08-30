@@ -9,11 +9,13 @@ const rootReducer = (state = initialState, action) => {
 
     case "CHANGE_IMGDATA":
     return {
+      ...state,
       imgData: action.payload
     }
 
     case "CHANGE_PARSEDTEXT":
     return {
+      ...state,
       parsedText: action.payload
     }
 
