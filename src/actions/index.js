@@ -27,7 +27,31 @@ export function convertImg(imageSrc) {
        $.ajax(settings).done((response) => {
        let resData = JSON.parse(response)
        let text = resData.ParsedResults[0].ParsedText
-       let parsedText = text.split(/((?:\w+ ){5})/g).filter(Boolean).join("\n");
+       let words = text.split(" ")
+
+        let i;
+        let lineA = [];
+        let lineB = [];
+        let lineC = [];
+
+        let objA = {};
+
+        for (i = 0; i < words.length; i++) {
+          if (i < 5) {
+            lineA.push(words[i])
+          } else if (i > 5 && i <= 10) {
+            lineB.push(words[i])
+          } else {
+            lineC.push(words[i])
+          }
+        }
+
+        objA["wordsA"] = lineA.join(" ")
+        objA["wordsB"] = lineB.join(" ")
+        objA["wordsC"] = lineC.join(" ")
+
+        let parsedText = objA
+
        dispatch({type: "CHANGE_PARSEDTEXT", payload: parsedText})
      })
    }
@@ -35,8 +59,7 @@ export function convertImg(imageSrc) {
 
  export function retakePhoto() {
    return {
-     type: "CLEAR_IMGDATA",
-     payload: null
+     type: "CLEAR_IMGDATA"
    }
  }
 

@@ -21,7 +21,8 @@ const rootReducer = (state = initialState, action) => {
 
     case "CLEAR_IMGDATA":
     return {
-      imgData: null
+       ...state,
+       imgData: null
     }
 
     default:
