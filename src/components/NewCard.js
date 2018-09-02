@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {retakePhoto} from '../actions'
-import CardForm from './CardForm'
+import GetCard from './CardForm'
 
 class NewCard extends Component {
 
@@ -32,7 +32,7 @@ class NewCard extends Component {
              <img src={imgData} alt=""/>
               <div className="newCard">
               <div id="cardText">
-              <CardForm onSubmit={this.submit}/>
+               <GetCard onSubmit={this.submit}/>
                <button onClick={this.props.retakePhoto}>Retake Photo</button>
               </div>
             </div>

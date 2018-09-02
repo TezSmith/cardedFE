@@ -69,6 +69,17 @@ export function convertImg(imageSrc) {
    }
  }
 
+ export function handleChange(e) {
+   let change = {}
+   change[e.target.name] = e.target.value
+
+   return {
+     type: "TEST"
+   }
+ }
+
+
+
  // export function handleEditSubmit() {
  //   return dispatch => {
  //     fetch('http://localhost:3000/api/v1/collections/:collection_id/bizcards',

@@ -55,6 +55,24 @@ const textReducer = (state = initialTextState, action) => {
        imgData: null
     }
 
+    case "TEST":
+    console.log("Hi")
+    return {
+      ...state
+    }
+
+    // case "FIELD_CHANGE"{
+    //   return {
+    //     ...state,
+    //     line1: action.payload,
+    //     line2: action.payload,
+    //     line3: action.payload,
+    //     line4: action.payload,
+    //     line5: action.payload,
+    //     card_name: action.payload
+    //   }
+    // }
+
     default:
     return state
   }

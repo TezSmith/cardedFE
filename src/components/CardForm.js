@@ -1,26 +1,35 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 import {connect} from 'react-redux'
+import {handleChange} from '../actions'
 
 
 const CardForm = (props) => {
-  const { handleSubmit, line1, line2, line3, line4, line5 } = props
+  const { handleSubmit, line1, line2, line3, line4, line5, card_name} = props
+
+//   handleChange = (e) => {
+//   // If you are using babel, you can use ES 6 dictionary syntax
+//   // let change = { [e.target.name] = e.target.value }
+//   let change = {}
+//   change[e.target.name] = e.target.value
+//   this.setState(change)
+// }
 
     return (
         <form onSubmit={handleSubmit}>
-           <h4>Name Your Card: <Field type="text" name="card_name" component="input" placeholder="Card Name"/></h4>
-           <h4>Line 1: <Field type="text" name="line1" component="input" placeholder={line1}/></h4>
-           <h4>Line 2: <Field type="text" name="line2" component="input" placeholder={line2}/></h4>
-           <h4>Line 3: <Field type="text" name="line3" component="input" placeholder={line3}/></h4>
-           <h4>Line 4: <Field type="text" name="line4" component="input" placeholder={line4}/></h4>
-           <h4>Line 5: <Field type="text" name="line5" component="input" placeholder={line5}/></h4>
+           <h4>Name Your Card: <Field type="text" name="card_name" component="input" placeholder="Card Name" value={card_name}/></h4>
+           <h4>Line 1: <Field type="text" name="line1" component="input" placeholder={line1} /></h4>
+           <h4>Line 2: <Field type="text" name="line2" component="input" placeholder={line2} value={line2} /></h4>
+           <h4>Line 3: <Field type="text" name="line3" component="input" placeholder={line3} value={line3} /></h4>
+           <h4>Line 4: <Field type="text" name="line4" component="input" placeholder={line4} value={line4} /></h4>
+           <h4>Line 5: <Field type="text" name="line5" component="input" placeholder={line5} value={line5} /></h4>
            <h4>Add To Collection:
-              <Field name="collection_name" component="select">
-                <option defaultValue="misc">Miscellaneous</option>
-                <option value="employers">Employers</option>
-                <option value="partners">Partners</option>
-                <option value="creatives">Creatives</option>
-              </Field>
+            <Field name="collection_name" component="select">
+              <option defaultValue="misc">Miscellaneous</option>
+              <option value="employers">Employers</option>
+              <option value="partners">Partners</option>
+              <option value="creatives">Creatives</option>
+            </Field>
            </h4>
            <button type="submit" value="submit">Save Card</button>
         </form>
@@ -41,6 +50,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-const GetCard = connect(mapStateToProps)(CardForm)
+const GetCard = connect(mapStateToProps, {handleChange})(CardForm)
 
 export default reduxForm({ form: 'cardform'})(GetCard)
