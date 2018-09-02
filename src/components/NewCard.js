@@ -5,43 +5,40 @@ import {retakePhoto} from '../actions'
 
 class NewCard extends Component {
 
-   state = {
-     showEdit: false
-   }
-
-   handleEditClick = () => {
-     this.setState(prevState => {
-       return {
-          showEdit: !prevState.showEdit
-       }
-     })
-   }
+   // state = {
+   //   showEdit: false
+   // }
+   //
+   // handleEditClick = () => {
+   //   this.setState(prevState => {
+   //     return {
+   //        showEdit: !prevState.showEdit
+   //     }
+   //   })
+   // }
 
   render() {
 
-     let paragraph = this.props.parsedText
-     let sentA = paragraph["wordsA"]
-     let sentB = paragraph["wordsB"]
-     let sentC = paragraph["wordsC"]
-     let sentD = paragraph["wordsD"]
-     let sentE = paragraph["wordsE"]
+    console.log(this.props)
+
+     const {imgData, line1, line2, line3, line4, line5 } = this.props
 
     return (
        <div>
            <div className="newCardCont">
-             <img src={this.props.imgData} alt=""/>
+             <img src={imgData} alt=""/>
               <div className="newCard">
               <div id="cardText">
               <form>
-               <h4>Line 1: <input type="text" name="line1" placeholder={sentA}/></h4>
-               <h4>Line 2: <input type="text" name="line2" placeholder={sentB}/></h4>
-               <h4>Line 3: <input type="text" name="line3" placeholder={sentC}/></h4>
-               <h4>Line 4: <input type="text" name="line4" placeholder={sentD}/></h4>
-               <h4>Line 5: <input type="text" name="line5" placeholder={sentE}/></h4>
+               <h4>Line 1: <input type="text" name="line1" placeholder={line1}/></h4>
+               <h4>Line 2: <input type="text" name="line2" placeholder={line2}/></h4>
+               <h4>Line 3: <input type="text" name="line3" placeholder={line3}/></h4>
+               <h4>Line 4: <input type="text" name="line4" placeholder={line4}/></h4>
+               <h4>Line 5: <input type="text" name="line5" placeholder={line5}/></h4>
                <h4>Name Your Card: <input type="text" name="card_name" placeholder="Card Name"/></h4>
                <h4>Add To Collection:
                   <select>
-                    <option name="collection_name" selected value="misc">Miscellaneous</option>
+                    <option name="collection_name" defaultValue="misc">Miscellaneous</option>
                     <option name="collection_name" value="employers">Employers</option>
                     <option name="collection_name" value="partners">Partners</option>
                     <option name="collection_name" value="creatives">Creatives</option>

@@ -36,8 +36,6 @@ export function convertImg(imageSrc) {
         let lineD = [];
         let lineE = [];
 
-        let objA = {};
-
         for (i = 0; i < words.length; i++) {
           if (i < 5) {
             lineA.push(words[i])
@@ -52,15 +50,17 @@ export function convertImg(imageSrc) {
           }
         }
 
-        objA["wordsA"] = lineA.join(" ")
-        objA["wordsB"] = lineB.join(" ")
-        objA["wordsC"] = lineC.join(" ")
-        objA["wordsD"] = lineD.join(" ")
-        objA["wordsE"] = lineE.join(" ")
+        let line1 = lineA.join(" ")
+        let line2 = lineB.join(" ")
+        let line3 = lineC.join(" ")
+        let line4 = lineD.join(" ")
+        let line5 = lineE.join(" ")
 
-        let parsedText = objA
-
-       dispatch({type: "CHANGE_PARSEDTEXT", payload: parsedText})
+       dispatch({type: "CHANGE_LINE1", payload: line1})
+       dispatch({type: "CHANGE_LINE2", payload: line2})
+       dispatch({type: "CHANGE_LINE3", payload: line3})
+       dispatch({type: "CHANGE_LINE4", payload: line4})
+       dispatch({type: "CHANGE_LINE5", payload: line5})
      })
    }
  }
