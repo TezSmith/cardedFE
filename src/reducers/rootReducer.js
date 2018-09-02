@@ -1,4 +1,5 @@
 const initialState = {
+  current_user: null,
   imgData: null,
   parsedText: '',
   cards: {}

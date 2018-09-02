@@ -33,6 +33,8 @@ export function convertImg(imageSrc) {
         let lineA = [];
         let lineB = [];
         let lineC = [];
+        let lineD = [];
+        let lineE = [];
 
         let objA = {};
 
@@ -41,14 +43,20 @@ export function convertImg(imageSrc) {
             lineA.push(words[i])
           } else if (i > 5 && i <= 10) {
             lineB.push(words[i])
-          } else {
+          } else if (i > 10 && i <= 15){
             lineC.push(words[i])
+          } else if (i > 15 && i <= 20){
+            lineD.push(words[i])
+          } else {
+            lineE.push(words[i])
           }
         }
 
         objA["wordsA"] = lineA.join(" ")
         objA["wordsB"] = lineB.join(" ")
         objA["wordsC"] = lineC.join(" ")
+        objA["wordsD"] = lineD.join(" ")
+        objA["wordsE"] = lineE.join(" ")
 
         let parsedText = objA
 
@@ -62,6 +70,24 @@ export function convertImg(imageSrc) {
      type: "CLEAR_IMGDATA"
    }
  }
+
+ // export function handleEditSubmit() {
+ //   return dispatch => {
+ //     fetch('http://localhost:3000/api/v1/collections/:collection_id/bizcards',
+ //        method: 'POST',
+ //        headers: {},
+ //        body: JSON.stringify({
+ //            card_name: x,
+ //            line1: x,
+ //            line2: x,
+ //            line3: x,
+ //            line4: x,
+ //            line5: x,
+ //            collection_id: x
+ //        })).then(res => res.json())
+ //        .then(console.log)
+ //   }
+ // }
 
   // const headers = { apikey: MYAPI, 'Content-Type': 'multipart/form-data' }
   // const body = JSON.stringify({base64Image: imageSrc})

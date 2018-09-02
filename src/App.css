@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -9,22 +13,31 @@
   color: white;
 }
 
-.Camera {
+/* .Camera {
   margin-bottom: 10px;
-}
+} */
 
-.newCard {
+.newCard  {
   border: 1px solid #000;
   border-radius: 5px;
-  width: 500px;
-  height: 250px;
+  width: 650px;
+  height: 375px;
   margin: 0 auto;
+  margin-top: 10px;
   text-align: center;
+}
+
+input {
+  color: #000;
+}
+
+::placeholder {
+  color: #000;
 }
 
 #cardText {
   position: relative;
-  top: 75px;
+  top: 25px;
   padding-left: 7px;
   padding-right: 7px;
 }
