@@ -19,8 +19,6 @@ class NewCard extends Component {
 
   render() {
 
-    console.log(this.props)
-
      const {imgData, line1, line2, line3, line4, line5 } = this.props
 
     return (
@@ -29,7 +27,7 @@ class NewCard extends Component {
              <img src={imgData} alt=""/>
               <div className="newCard">
               <div id="cardText">
-              <form>
+
                <h4>Line 1: <input type="text" name="line1" placeholder={line1}/></h4>
                <h4>Line 2: <input type="text" name="line2" placeholder={line2}/></h4>
                <h4>Line 3: <input type="text" name="line3" placeholder={line3}/></h4>
@@ -46,7 +44,7 @@ class NewCard extends Component {
                </h4>
                <button type="submit" value="submit">Save Card</button>
                <button onClick={this.props.retakePhoto}>Retake</button>
-              </form>
+            
               </div>
             </div>
           </div>
@@ -58,8 +56,15 @@ class NewCard extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    imgData: state.imgData,
-    parsedText: state.parsedText
+    current_user: {id: state.text.current_user.id},
+    imgData: state.text.imgData,
+    line1: state.text.line1,
+    line2: state.text.line2,
+    line3: state.text.line3,
+    line4: state.text.line4,
+    line5: state.text.line5,
+    card_name: state.text.card_name,
+    collection_name: state.text.collection_name
   }
 }
 

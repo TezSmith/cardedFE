@@ -3,12 +3,10 @@ import $ from 'jquery'
 
 export function convertImg(imageSrc) {
   return dispatch => {
-
     dispatch({type: "CHANGE_IMGDATA", payload: imageSrc})
 
     let form = new FormData()
     form.append('base64Image', imageSrc)
-
     var settings = {
       "async": true,
       "crossDomain": true,
