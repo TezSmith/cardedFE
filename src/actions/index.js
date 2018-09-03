@@ -78,6 +78,14 @@ export function convertImg(imageSrc) {
    }
  }
 
+ export function createCard(values) {
+   return dispatch => {
+   console.log("You've reached the action creator", values)
+   }
+ }
+
+
+
 
 
  // export function handleEditSubmit() {

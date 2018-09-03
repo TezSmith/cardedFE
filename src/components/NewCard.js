@@ -1,39 +1,39 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {retakePhoto} from '../actions'
+import {createCard} from '../actions'
 import GetCard from './CardForm'
 
 class NewCard extends Component {
 
-   // state = {
-   //   showEdit: false
-   // }
-   //
-   // handleEditClick = () => {
-   //   this.setState(prevState => {
-   //     return {
-   //        showEdit: !prevState.showEdit
-   //     }
-   //   })
-   // }
+  // state = {
+  //   line1: this.props.line1,
+  //   line2: this.props.line2,
+  //   line3: this.props.line3,
+  //   line4: this.props.line4,
+  //   line5: this.props.line5,
+  //   card_name: this.props.card_name,
+  //   collection_name: this.props.collection_name
+  // }
 
-   submit = values => {
-    // print the form values to the console
-    console.log(values)
+  submit = values => {
+    this.props.createCard(values)
   }
+
 
   render() {
 
-     const {imgData} = this.props
+    const {imgData} = this.props
+    // console.log("This is the component props", this.props)
 
     return (
-       <div>
+         <div>
            <div className="newCardCont">
              <img src={imgData} alt=""/>
               <div className="newCard">
               <div id="cardText">
                <GetCard onSubmit={this.submit}/>
-               <button onClick={this.props.retakePhoto}>Retake Photo</button>
+               <button onClick={this.props.retakePhoto}>Retake</button>
               </div>
             </div>
           </div>
@@ -57,4 +57,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {retakePhoto})(NewCard)
+export default connect(mapStateToProps, {retakePhoto, createCard})(NewCard)
