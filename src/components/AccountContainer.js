@@ -2,24 +2,24 @@ import React, {Component} from 'react'
 import SignupForm from './Signup'
 import LoginForm from './Login'
 import {connect} from 'react-redux'
-import {getUser} from '../actions'
+import {registerUser, getUser} from '../actions'
 
 
 class AccountContainer extends Component {
 
   submitSignup = values => {
-    this.props.getUser(values)
+    this.props.registerUser(values)
   }
 
   submitLogin = values => {
-    console.log("This is the login", values)
+    this.props.getUser(values)
   }
 
    render() {
 
      return(
        <div>
-         { this.props.user.id === 0 ? <SignupForm onSubmit={this.submitSignup}/> : <LoginForm onSubmit={this.submitLogin}/>}
+         { this.props.user.id === 0 ? <LoginForm onSubmit={this.submitLogin}/> : <SignupForm onSubmit={this.submitSignup}/>}
        </div>
      )
    }
