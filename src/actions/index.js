@@ -69,48 +69,23 @@ export function convertImg(imageSrc) {
    }
  }
 
- export function handleChange(e) {
-   let change = {}
-   change[e.target.name] = e.target.value
-
-   return {
-     type: "TEST"
-   }
- }
-
  export function createCard(values) {
    return dispatch => {
    console.log("You've reached the action creator", values)
+
+   // fetch('http://localhost:3000/api/v1/collections/:collection_id/bizcards',
+   //    method: 'POST',
+   //    headers: {"Content-Type": "application/json; charset=utf-8"},
+   //    body: JSON.stringify({
+   //        card_name: x,
+   //        line1: x,
+   //        line2: x,
+   //        line3: x,
+   //        line4: x,
+   //        line5: x,
+   //        collection_id: x
+   //    })).then(res => res.json())
+   //    .then(console.log)
+
    }
  }
-
-
-
-
-
- // export function handleEditSubmit() {
- //   return dispatch => {
- //     fetch('http://localhost:3000/api/v1/collections/:collection_id/bizcards',
- //        method: 'POST',
- //        headers: {},
- //        body: JSON.stringify({
- //            card_name: x,
- //            line1: x,
- //            line2: x,
- //            line3: x,
- //            line4: x,
- //            line5: x,
- //            collection_id: x
- //        })).then(res => res.json())
- //        .then(console.log)
- //   }
- // }
-
-  // const headers = { apikey: MYAPI, 'Content-Type': 'multipart/form-data' }
-  // const body = JSON.stringify({base64Image: imageSrc})
-  // fetch('https://api.ocr.space/parse/image', {
-  //   method: 'POST',
-  //   headers: headers,
-  //   body: JSON.stringify({body})
-  // }).then(res => res.json())
-  // .then(console.log)

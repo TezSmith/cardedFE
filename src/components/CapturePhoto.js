@@ -34,6 +34,7 @@ class CapturePhoto extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    user_id: state.text.user_id,
     imgData: state.text.imgData,
     line1: state.text.line1,
     line2: state.text.line2,

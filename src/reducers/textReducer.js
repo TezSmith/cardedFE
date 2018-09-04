@@ -1,13 +1,11 @@
 const initialTextState = {
-  current_user: {id: 0},
+  user_id: 1,
   imgData: null,
   line1: '',
   line2: '',
   line3: '',
   line4: '',
   line5: '',
-  card_name: '',
-  collection_name: ''
 }
 
 const textReducer = (state = initialTextState, action) => {
@@ -54,24 +52,6 @@ const textReducer = (state = initialTextState, action) => {
        ...state,
        imgData: null
     }
-
-    case "TEST":
-    console.log("Hi")
-    return {
-      ...state
-    }
-
-    // case "FIELD_CHANGE"{
-    //   return {
-    //     ...state,
-    //     line1: action.payload,
-    //     line2: action.payload,
-    //     line3: action.payload,
-    //     line4: action.payload,
-    //     line5: action.payload,
-    //     card_name: action.payload
-    //   }
-    // }
 
     default:
     return state
