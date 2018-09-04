@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import './App.css'
-import CapturePhoto from '../src/components/CapturePhoto'
-import NewCard from '../src/components/NewCard'
 import AccountContainer from '../src/components/AccountContainer'
 import CameraContainer from '../src/components/CameraContainer'
 // import BizCardContainer from '../src/components/BizCardContainer'

@@ -14,7 +14,14 @@ const CardForm = (props) => {
          <h4>Line 4: <Field type="text" name="line4" component="input" placeholder={line4} /></h4>
          <h4>Line 5: <Field type="text" name="line5" component="input" placeholder={line5} /></h4>
          <h4>Name Your Card: <Field type="text" name="card_name" component="input"/></h4>
-         <h4>Add To Collection: <Field type="text" name="collection_name" component="input" /></h4>
+         <h4>Add To Collection:
+           <Field name="collection_name" component="select">
+            <option/>
+             <option value="Employers">Employers</option>
+             <option value="Partners">Contacts</option>
+             <option value="Other">Others</option>
+           </Field>
+         </h4>
          <button type="submit" value="submit">Save Card</button>
       </form>
     )
@@ -30,7 +37,8 @@ const mapStateToProps = (state, ownProps) => {
       line2: state.text.line2,
       line3: state.text.line3,
       line4: state.text.line4,
-      line5: state.text.line5
+      line5: state.text.line5,
+      collection_name: ''
     }
   }
 }

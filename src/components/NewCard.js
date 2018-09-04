@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {retakePhoto} from '../actions'
 import {createCard} from '../actions'
-import GetCard from './CardForm'
+import CardForm from './CardForm'
 
 class NewCard extends Component {
 
   submit = values => {
+    console.log("this are the form values", values)
     this.props.createCard(values)
   }
 
@@ -20,7 +21,7 @@ class NewCard extends Component {
              <img src={imgData} alt=""/>
               <div className="newCard">
               <div id="cardText">
-               <GetCard onSubmit={this.submit}/>
+               <CardForm onSubmit={this.submit}/>
                <button onClick={this.props.retakePhoto}>Retake</button>
               </div>
             </div>
