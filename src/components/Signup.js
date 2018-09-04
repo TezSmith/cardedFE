@@ -21,4 +21,4 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps)( reduxForm({ form: 'signupform'})(LoginForm) )
+export default connect(mapStateToProps)( reduxForm({ form: 'signupform'})(SignupForm) )

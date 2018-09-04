@@ -1,6 +1,21 @@
 import MYAPI from '../connectAPI.js'
 import $ from 'jquery'
 
+export function getUser(values) {
+  return dispatch => {
+
+    fetch("http://localhost:3000/api/v1/signup", {
+       method: 'POST',
+       body: JSON.stringify(values),
+       headers: {"Content-Type": "application/json"}
+     }).then(res => res.json()).then(res => {
+       dispatch({type: "UPDATE_USERID", payload: res.data.id })
+       dispatch({type: "UPDATE_USERNAME", payload: res.data.attributes.username })}
+     )
+
+  }
+}
+
 export function convertImg(imageSrc) {
   return dispatch => {
     dispatch({type: "CHANGE_IMGDATA", payload: imageSrc})

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import CapturePhoto from '../src/components/CapturePhoto'
 import NewCard from '../src/components/NewCard'
+import AccountContainer from '../src/components/AccountContainer'
 import BizCardContainer from '../src/components/BizCardContainer'
 import {connect} from 'react-redux'
 
@@ -13,6 +14,7 @@ class App extends Component {
     return (
       <div className="App">
           <h1>Get Carded!</h1>
+          <AccountContainer />
           {this.props.imgData ? <NewCard /> : <CapturePhoto /> }
           <BizCardContainer />
       </div>
@@ -22,6 +24,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    user: {id: state.text.user.id, username: state.text.user.username},
     imgData: state.text.imgData,
     line1: state.text.line1,
     line2: state.text.line2,
