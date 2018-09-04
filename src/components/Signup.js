@@ -7,7 +7,7 @@ const SignupForm = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-       <h4>Name <Field type="name" name="name" component="input" /></h4>
+       <h4>Name: <Field type="name" name="name" component="input" /></h4>
        <h4>Username: <Field type="username" name="username" component="input" /></h4>
        <button type="submit" value="submit">Signup</button>
     </form>
