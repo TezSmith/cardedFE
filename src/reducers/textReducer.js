@@ -1,5 +1,5 @@
 const initialTextState = {
-  user: {id: 0, username: ''},
+  user: {id: 0, username: '', collection: []},
   imgData: null,
   line1: '',
   line2: '',
@@ -15,12 +15,6 @@ const textReducer = (state = initialTextState, action) => {
     return {
       ...state,
       user: action.payload
-    }
-
-    case "UPDATE_USERNAME":
-    return {
-      ...state,
-      user: {...state.user.id, username: action.payload}
     }
 
     case "CHANGE_IMGDATA":

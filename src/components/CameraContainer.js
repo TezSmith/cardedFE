@@ -18,7 +18,7 @@ class CameraContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: {id: state.text.user.id, username: state.text.user.username},
+    user: {id: state.text.user.id, username: state.text.user.username, collection: state.text.user.collection },
     imgData: state.text.imgData
   }
 }
