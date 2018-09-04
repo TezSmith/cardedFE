@@ -7,6 +7,17 @@ import {registerUser, getUser} from '../actions'
 
 class AccountContainer extends Component {
 
+  state = {
+    showSignup: true
+  }
+
+  toggleSignup = (e) => {
+    e.preventDefault()
+    this.setState(prevState => ({
+      showSignup: !prevState.showSignup
+    }))
+  }
+
   submitSignup = values => {
     this.props.registerUser(values)
   }
@@ -19,7 +30,7 @@ class AccountContainer extends Component {
 
      return(
        <div>
-         { this.props.user.id === 0 ? <LoginForm onSubmit={this.submitLogin}/> : <SignupForm onSubmit={this.submitSignup}/>}
+         { this.state.showSignup ? <SignupForm onSubmit={this.submitSignup} toggleSignup={this.toggleSignup}/> : <LoginForm onSubmit={this.submitLogin} toggleLogin={this.toggleSignup}/> }
        </div>
      )
    }
@@ -31,4 +42,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { getUser })(AccountContainer)
+export default connect(mapStateToProps, { registerUser, getUser })(AccountContainer)

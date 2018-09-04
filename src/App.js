@@ -3,7 +3,9 @@ import './App.css'
 import CapturePhoto from '../src/components/CapturePhoto'
 import NewCard from '../src/components/NewCard'
 import AccountContainer from '../src/components/AccountContainer'
-import BizCardContainer from '../src/components/BizCardContainer'
+import CameraContainer from '../src/components/CameraContainer'
+// import BizCardContainer from '../src/components/BizCardContainer'
+import NavBar from '../src/components/NavBar'
 import {connect} from 'react-redux'
 
 class App extends Component {
@@ -13,10 +15,9 @@ class App extends Component {
 
     return (
       <div className="App">
-          <h1>Get Carded!</h1>
-          <AccountContainer />
-          {this.props.imgData ? <NewCard /> : <CapturePhoto /> }
-          <BizCardContainer />
+          <NavBar />
+          {this.props.user.id === 0 ? <AccountContainer/> : <CameraContainer />}
+          {/*<BizCardContainer />*/}
       </div>
     )
   }

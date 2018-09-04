@@ -13,9 +13,10 @@
   color: white;
 }
 
-/* .Camera {
-  margin-bottom: 10px;
-} */
+a {
+  margin-top: 5px;
+  text-decoration: underline;
+}
 
 .newCard  {
   border: 1px solid #000;

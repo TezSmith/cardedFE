@@ -3,13 +3,15 @@ import { Field, reduxForm } from 'redux-form'
 import {connect} from 'react-redux'
 
 const SignupForm = (props) => {
-  const { handleSubmit } = props
+  const { handleSubmit, toggleSignup } = props
 
   return (
     <form onSubmit={handleSubmit}>
        <h4>Name: <Field type="name" name="name" component="input" /></h4>
        <h4>Username: <Field type="username" name="username" component="input" /></h4>
        <button type="submit" value="submit">Signup</button>
+       <br/>
+       <a onClick={toggleSignup}>Already Have An Account?</a>
     </form>
   )
 
