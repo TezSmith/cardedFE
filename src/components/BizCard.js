@@ -3,8 +3,7 @@ import React, {Component} from 'react'
 
 export default class BizCard extends Component {
   render(){
-
-    console.log("Card Props", this.props)
+    
     const {card_name, line1, line2, line3, line4, line5 } = this.props.card
 
     return (

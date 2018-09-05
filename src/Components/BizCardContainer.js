@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 class BizCardContainer extends Component {
 
   render() {
-      const collections = this.props.user.collections
+      // const collections = this.props.user.collections
       const bizcards = this.props.user.bizcards
 
     return (

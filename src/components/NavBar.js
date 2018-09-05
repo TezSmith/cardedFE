@@ -8,8 +8,7 @@ const Navbar = (props) => {
   return (
     <div>
        <h3>Welcome, {props.user.username}</h3>
-       <button>Take Photo</button>
-       <button onClick={handleCards}>See Cards</button>
+       <button onClick={handleCards}>My Cards</button>
        <button onClick={handleLogout}>Logout</button>
     </div>
   )
