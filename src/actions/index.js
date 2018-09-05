@@ -9,10 +9,8 @@ export function registerUser(values) {
        body: JSON.stringify(values),
        headers: {"Content-Type": "application/json"}
      }).then(res => res.json()).then(res => {
-         dispatch({type: "UPDATE_USER", payload: {id: res.data.id, username: res.data.attributes.username } })
+         dispatch({type: "UPDATE_USER", payload: {id: res.data.id, username: res.data.attributes.username, bizcards: res.data.attributes.bizcards, collections: res.data.relationships.collections.data } })
        }
-       // dispatch({type: "UPDATE_USERID", payload: res.data.id })
-       // dispatch({type: "UPDATE_USERNAME", payload: res.data.attributes.username })}
      )
 
   }
@@ -27,7 +25,7 @@ export function getUser(values) {
        headers: {"Content-Type": "application/json"}
      }).then(res => res.json()).then(res => {
        console.log(res);
-       dispatch({type: "UPDATE_USER", payload: {id: res.data.id, username: res.data.attributes.username } })
+       dispatch({type: "UPDATE_USER", payload: {id: res.data.id, username: res.data.attributes.username, bizcards: res.data.attributes.bizcards, collections: res.data.relationships.collections.data } })
        // dispatch({type: "UPDATE_USERNAME", payload: res.data.attributes.username })
        }
      )
@@ -111,7 +109,6 @@ export function convertImg(imageSrc) {
 
  export function createCard(values) {
    return dispatch => {
-   // console.log("You've reached the action creator", values)
 
    fetch("http://localhost:3000/api/v1/bizcards", {
       method: 'POST',

@@ -17,7 +17,7 @@ const LoginForm = (props) => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    user: {id: state.text.user.id, username: state.text.user.username, collection: state.text.user.collection }
+    user: {id: state.text.user.id, username: state.text.user.username, bizcards: state.text.user.bizcards, collections: state.text.user.collections }
   }
 }
 

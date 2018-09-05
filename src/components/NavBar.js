@@ -3,20 +3,21 @@ import {connect} from 'react-redux'
 import {handleLogout} from '../actions'
 
 const Navbar = (props) => {
-   const {handleLogout} = props
+   const {handleLogout, handleCards} = props
 
   return (
     <div>
-       <h1>Get Carded</h1>
-       { props.user.id !== 0 ? <h3>Welcome, {props.user.username}</h3> : null }
-       { props.user.id !== 0 ? <button onClick={handleLogout}>Logout</button> : null}
+       <h3>Welcome, {props.user.username}</h3>
+       <button>Take Photo</button>
+       <button onClick={handleCards}>See Cards</button>
+       <button onClick={handleLogout}>Logout</button>
     </div>
   )
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    user: {id: state.text.user.id, username: state.text.user.username, collection: state.text.user.collection }
+    user: {id: state.text.user.id, username: state.text.user.username, bizcards: state.text.user.bizcards, collections: state.text.user.collections }
   }
 }
 

@@ -1,5 +1,5 @@
 const initialTextState = {
-  user: {id: 0, username: '', collection: []},
+  user: {id: 0, username: '', bizcards: [], collections: []},
   imgData: null,
   line1: '',
   line2: '',

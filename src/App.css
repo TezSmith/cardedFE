@@ -28,6 +28,16 @@ a {
   text-align: center;
 }
 
+.bizcard {
+  border: 1px solid #000;
+  border-radius: 5px;
+  width: 300px;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+}
+
 input {
   color: #000;
 }

@@ -1,14 +1,25 @@
 import React, {Component} from 'react'
 import BizCard from './BizCard'
+import {connect} from 'react-redux'
 
-export default class BizCardContainer extends Component {
+class BizCardContainer extends Component {
 
   render() {
+      const collections = this.props.user.collections
+      const bizcards = this.props.user.bizcards
 
     return (
-      <div>
-        <BizCard />
-      </div>
-    )
+          <div>
+            {bizcards.map(card => { return <BizCard key={card.id} card={card} /> } )}
+          </div>
+     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    user: {id: state.text.user.id, username: state.text.user.username, bizcards: state.text.user.bizcards, collections: state.text.user.collections }
+  }
+}
+
+export default connect(mapStateToProps)(BizCardContainer)

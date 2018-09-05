@@ -18,8 +18,8 @@ const CardForm = (props) => {
            <Field name="collection_name" component="select">
             <option/>
              <option value="Employers">Employers</option>
-             <option value="Partners">Contacts</option>
-             <option value="Other">Others</option>
+             <option value="Partners">Partners</option>
+             <option value="Other">Other</option>
            </Field>
          </h4>
          <button type="submit" value="submit">Save Card</button>
@@ -29,7 +29,7 @@ const CardForm = (props) => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    user: {id: state.text.user.id, username: state.text.user.username, collection: state.text.user.collection }
+    user: {id: state.text.user.id, username: state.text.user.username, bizcards: state.text.user.bizcards, collections: state.text.user.collections },
     initialValues: {
       user: {id: state.text.user.id, username: state.text.user.username},
       line1: state.text.line1,

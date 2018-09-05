@@ -38,7 +38,7 @@ class AccountContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: {id: state.text.user.id, username: state.text.user.username}
+    user: {id: state.text.user.id, username: state.text.user.username, bizcards: state.text.user.bizcards, collections: state.text.user.collections }
   }
 }
 
