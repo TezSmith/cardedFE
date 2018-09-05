@@ -9,7 +9,7 @@ export function registerUser(values) {
        body: JSON.stringify(values),
        headers: {"Content-Type": "application/json"}
      }).then(res => res.json()).then(res => {
-         dispatch({type: "UPDATE_USER", payload: {id: res.data.id, username: res.data.attributes.username, bizcards: res.data.attributes.bizcards, collections: res.data.relationships.collections.data } })
+         dispatch({type: "UPDATE_USER", payload: {id: res.data.id, username: res.data.attributes.username, bizcards: res.data.attributes.bizcards, collections: res.data.attributes.collections } })
        }
      )
 
@@ -25,7 +25,7 @@ export function getUser(values) {
        headers: {"Content-Type": "application/json"}
      }).then(res => res.json()).then(res => {
        console.log(res);
-       dispatch({type: "UPDATE_USER", payload: {id: res.data.id, username: res.data.attributes.username, bizcards: res.data.attributes.bizcards, collections: res.data.relationships.collections.data } })
+       dispatch({type: "UPDATE_USER", payload: {id: res.data.id, username: res.data.attributes.username, bizcards: res.data.attributes.bizcards, collections: res.data.attributes.collections } })
        // dispatch({type: "UPDATE_USERNAME", payload: res.data.attributes.username })
        }
      )

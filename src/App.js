@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import AccountContainer from '../src/components/AccountContainer'
 import CameraContainer from '../src/components/CameraContainer'
-import BizCardContainer from '../src/components/BizCardContainer'
+import CardsContainer from '../src/components/CardsContainer'
 import NavBar from '../src/components/NavBar'
 import {connect} from 'react-redux'
 
@@ -22,7 +22,7 @@ class App extends Component {
     if (this.state.showCards === false) {
       return <CameraContainer />
     } else {
-      return <BizCardContainer />
+      return <CardsContainer />
     }
   }
 
