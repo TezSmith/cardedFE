@@ -5,7 +5,6 @@ import {connect} from 'react-redux'
 class CardsContainer extends Component {
 
   render() {
-
     // get all of users collections
     // display collection names as headers - CollectionContainer
     // under each collection

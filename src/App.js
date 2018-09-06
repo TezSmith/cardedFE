@@ -1,41 +1,22 @@
 import React, { Component } from 'react'
 import './App.css'
-import AccountContainer from '../src/components/AccountContainer'
-import CameraContainer from '../src/components/CameraContainer'
+import HomeContainer from '../src/components/HomeContainer'
 import CardsContainer from '../src/components/CardsContainer'
 import NavBar from '../src/components/NavBar'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
+import { Switch, Route, withRouter } from 'react-router-dom'
 
 class App extends Component {
 
-  state = {
-    showCards: false
-  }
-
-  handleCards = () => {
-    this.setState(prevState => ({
-      showCards: !prevState.showCards
-    }))
-  }
-
-  showContainer = () => {
-    if (this.state.showCards === false) {
-      return <CameraContainer />
-    } else {
-      return <CardsContainer />
-    }
-  }
-
-
-
   render() {
-
     return (
       <div className="App">
           <h1>Get Carded</h1>
-          {this.props.user.id !== 0 ? <NavBar handleCards={this.handleCards}/> :null }
-          {this.props.user.id === 0 ? <AccountContainer/> : this.showContainer()}
-
+          {this.props.user.id !== 0 ? <NavBar/> :null}
+          <Switch>
+            <Route exact path="/MyCards" component={CardsContainer} />
+            <Route exact path="/" component={HomeContainer} />
+          </Switch>
       </div>
     )
   }
@@ -53,4 +34,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(App)
+export default withRouter(connect(mapStateToProps)(App))
