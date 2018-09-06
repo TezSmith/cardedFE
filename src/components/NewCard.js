@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import {retakePhoto} from '../actions'
 import {createCard} from '../actions'
 import CardForm from './CardForm'
@@ -7,8 +8,8 @@ import CardForm from './CardForm'
 class NewCard extends Component {
 
   submit = values => {
-    console.log("this are the form values", values)
     this.props.createCard(values)
+    this.props.history.replace('/MyCards')
   }
 
   render() {
@@ -46,4 +47,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {retakePhoto, createCard})(NewCard)
+export default withRouter(connect(mapStateToProps, {retakePhoto, createCard})(NewCard))

@@ -6,20 +6,22 @@ class CollectionContainer extends Component {
 
   render() {
 
-    const {collection_name} = this.props.collection
-
     // get all of users collections
     // display collection names as headers - CollectionContainer
     // under each collection
     // filter bizcards by collection id - then map the filteredCards to list <BizCard />s
 
-      const bizcards = this.props.user.bizcards
+
+     const {collection_name} = this.props.collection
+     const bizcards = this.props.user.bizcards
       let collectionCards = bizcards.filter(b => b.collection_id === this.props.collection.id )
 
     return (
           <div>
-           <h1>{collection_name} </h1>
+            <div className="collections">
+            <h2>{collection_name} </h2>
             {collectionCards.map(card => { return <BizCard key={card.id} card={card} /> } )}
+            </div>
           </div>
      )
   }

@@ -1,10 +1,15 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {handleLogout} from '../actions'
-import { Link } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 
 const Navbar = (props) => {
    const {handleLogout} = props
+
+   const startLogout = () => {
+     handleLogout()
+     props.history.replace('/')
+   }
 
   return (
 
@@ -12,12 +17,10 @@ const Navbar = (props) => {
        <h3>Welcome, {props.user.username}</h3>
        <Link to='/'> Home </Link>
        <Link to='/MyCards'> My Cards </Link>
-       <a onClick={handleLogout}>Logout</a>
+       <a onClick={startLogout}>Logout</a>
     </div>
   )
 }
-
-// history.replace <- how to reset link back to /
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -25,4 +28,4 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps, {handleLogout})(Navbar)
+export default withRouter(connect(mapStateToProps, {handleLogout})(Navbar))

@@ -6,6 +6,7 @@ const initialTextState = {
   line3: '',
   line4: '',
   line5: '',
+  newCard: null
 }
 
 const textReducer = (state = initialTextState, action) => {
@@ -57,6 +58,12 @@ const textReducer = (state = initialTextState, action) => {
     return {
        ...state,
        imgData: null
+    }
+
+    case "ADD_CARD":
+    return {
+      ...state,
+      newCard: action.payload
     }
 
     case "CLEAR_STATE":

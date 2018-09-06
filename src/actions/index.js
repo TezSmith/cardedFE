@@ -24,9 +24,7 @@ export function getUser(values) {
        body: JSON.stringify(values),
        headers: {"Content-Type": "application/json"}
      }).then(res => res.json()).then(res => {
-       console.log(res);
        dispatch({type: "UPDATE_USER", payload: {id: res.data.id, username: res.data.attributes.username, bizcards: res.data.attributes.bizcards, collections: res.data.attributes.collections } })
-       // dispatch({type: "UPDATE_USERNAME", payload: res.data.attributes.username })
        }
      )
 
@@ -34,8 +32,8 @@ export function getUser(values) {
 }
 
 export function handleLogout() {
-  return {
-    type: "CLEAR_STATE"
+  return dispatch => {
+    dispatch({type: "CLEAR_STATE"})
   }
 }
 
@@ -109,13 +107,15 @@ export function convertImg(imageSrc) {
 
  export function createCard(values) {
    return dispatch => {
-
    fetch("http://localhost:3000/api/v1/bizcards", {
       method: 'POST',
       body: JSON.stringify(values),
       headers: {"Content-Type": "application/json"}
-    }).then(res => res.json()).then(console.log)
-
+    }).then(res => res.json()).then(res => {
+      console.log("the result",res)
+        dispatch({ type: "ADD_CARD", payload: res.data.attributes })
+      }
+    )
   }
 
  }
