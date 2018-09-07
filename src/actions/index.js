@@ -116,6 +116,7 @@ export function convertImg(imageSrc) {
         dispatch({ type: "ADD_CARD", payload: res.data.attributes })
       }
     )
+    dispatch({ type: "CLEAR_IMGDATA"})
   }
 
  }

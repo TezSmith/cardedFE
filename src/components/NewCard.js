@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import { Button } from 'semantic-ui-react'
 import {retakePhoto} from '../actions'
 import {createCard} from '../actions'
 import CardForm from './CardForm'
@@ -20,10 +21,10 @@ class NewCard extends Component {
          <div>
            <div className="newCardCont">
              <img src={imgData} alt=""/>
-              <div className="newCard">
+              <div>
               <div id="cardText">
                <CardForm onSubmit={this.submit}/>
-               <button onClick={this.props.retakePhoto}>Retake</button>
+               <Button onClick={this.props.retakePhoto}>Retake</Button>
               </div>
             </div>
           </div>

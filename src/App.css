@@ -42,6 +42,18 @@ input {
   color: #000;
 }
 
+.formCont {
+  margin-bottom: 10px;
+}
+
+/* Styles Form */
+.ui.input>input {
+  padding: .54em 5em;
+  border: none;
+  border-radius: 0px;
+  border-bottom: 1px solid #000;
+}
+
 ::placeholder {
   color: #000;
 }
