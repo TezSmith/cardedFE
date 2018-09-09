@@ -6,28 +6,30 @@
   text-align: center;
 }
 
-/* Dark Orange */
+/* Login Link Color - Ice Blue */
 a {
-  color: #EF7B45;
+  color: #23b5d3;
 }
-/* Pumpkin Color */
+/* Login Hover Color - Seaweed */
 a:hover {
-  color: #D84727;
+  color: #187d91;
 }
 
-/* Login & Signup Form Button - Dark Orange */
+/* Login & Signup Form, Camera Button - Seaweed */
 .ui.button.color1 {
-  background-color: #D84727;
+  background-color: #187d91;
   color: #fff;
   font-weight: normal;
 }
 
-/* Camera Button Color - Pumpkin Color */
+/* Save Form Button - Pink */
 .ui.button.color2 {
-  background-color: #EF7B45;
+  background-color: #D3235D;
   color: #fff;
   font-weight: normal;
 }
+
+
 
 /* Removes spacing from underneath the navigation menu */
 .ui.menu {
@@ -36,7 +38,9 @@ a:hover {
 
 /* Styles the component behind the signup form */
 .accountCont {
-  background-color: #5EB1BF;
+  background-image: linear-gradient(rgba(35, 181, 211, 1), rgba(24, 125, 145, 1));
+  /* background: black url("./phone1.jpg") no-repeat fixed center;
+  background-size: cover; */
   height: 105vh;
 }
 
@@ -46,7 +50,7 @@ a:hover {
 }
 
 #capturePhoto {
-   background-color: #5EB1BF ;
+   background-color: #23B5D3;
    height: 120vh;
 }
 
@@ -56,8 +60,8 @@ a:hover {
 }
 
 #newCardCont {
-  background-color: #FAF3DD!important;
-  height: 175vh;
+  background-color: #FFFFFA!important;
+  height: 180vh;
 }
 
 #photo {
@@ -86,19 +90,28 @@ input {
 }
 
 .cardsCont {
-  background-color: #EF7B45;
-  z-index: -100;
-  padding-bottom: 50px;
+  background-image: linear-gradient(to right, rgba(35, 181, 211, 1), rgba(24, 125, 145, 1));
+  /* background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(24, 125, 145, 0.5)); */
+  padding-bottom: 25px;
 }
 
 
 #collections {
-  padding-top: 25px;
+  padding: 30px 0px;
+}
+
+.ui.card {
 }
 
 .bizcard {
-  margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 5px;
+  border: 1px solid rgba(34,36,38,.15);
+  border-radius: 5px;
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  webkit-box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  background-color: #FFFFFA;
+  width: 100%;
+  min-height: 245px;
 }
 
 #cardText {
@@ -106,4 +119,15 @@ input {
   top: 25px;
   padding-left: 7px;
   padding-right: 7px;
+}
+
+#cardText > h4 {
+  color: #D3235D;
+}
+
+.lastCard {
+  margin-top: 30px;
+  text-align: center;
+  display: inline-block;
+
 }

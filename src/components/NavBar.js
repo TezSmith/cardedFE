@@ -13,21 +13,22 @@ const Navbar = (props) => {
    }
 
   return (
-    <Menu>
-       <Menu.Item>
-         <Link to='/'> Home </Link>
-       </Menu.Item>
+      <Menu>
+         <Menu.Item>
+           <Link to='/'> Home </Link>
+         </Menu.Item>
 
-       <Menu.Item>
-         <Link to='/MyCards'> My Cards </Link>
-       </Menu.Item>
+         <Menu.Item>
+           <Link to='/MyCards'> My Cards </Link>
+         </Menu.Item>
 
-       <Menu.Menu position='right'>
-        <Menu.Item>
-        <a onClick={startLogout}>Logout</a>
-       </Menu.Item>
-       </Menu.Menu>
-     </Menu>
+         <Menu.Menu position='right'>
+          <Menu.Item>
+          <a onClick={startLogout}>Logout</a>
+         </Menu.Item>
+         </Menu.Menu>
+       </Menu>
+
   )
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import { Field, reduxForm } from 'redux-form'
 import { InputField } from 'react-semantic-redux-form';
-import { Button, Form, Grid, Segment } from 'semantic-ui-react'
+import { Header, Button, Form, Grid, Segment } from 'semantic-ui-react'
 
 const SignupForm = (props) => {
   const { handleSubmit, toggleSignup } = props
@@ -21,7 +21,9 @@ const SignupForm = (props) => {
 
    <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
      <Grid.Column style={{ maxWidth: 450 }}>
-
+     <Header as='h2' color='white' textAlign='center'>
+          Save Your Cards. Not The Clutter.
+        </Header>
        <Form onSubmit={handleSubmit}>
          <Segment stacked>
           <h4><Field type="name" name="name" component={InputField} placeholder="Name"/></h4>

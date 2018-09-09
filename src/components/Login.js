@@ -22,7 +22,9 @@ const LoginForm = (props) => {
 
    <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
      <Grid.Column style={{ maxWidth: 450 }}>
-
+     <Header as='h2' color='white' textAlign='center'>
+          Save Your Cards. Not The Clutter.
+        </Header>
        <Form onSubmit={handleSubmit}>
          <Segment stacked>
           <h4><Field type="username" name="username" component={InputField} placeholder="Username"/></h4>

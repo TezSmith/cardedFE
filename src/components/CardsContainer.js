@@ -17,7 +17,7 @@ class CardsContainer extends Component {
     return (
           <div className="cardsCont">
             {newCard ? <div className="lastCard">
-              <h2>Your Latest Card</h2>
+              <h2>Your New Card!</h2>
               <BizCard card={newCard} />
             </div> : null}
             {collections.map(collection => { return <CollectionContainer key={collection.id} collection={collection} /> } )}

@@ -24,7 +24,7 @@ class NewCard extends Component {
               <div>
               <div id="cardText">
                <CardForm onSubmit={this.submit}/>
-               <Button onClick={this.props.retakePhoto}>Retake</Button>
+               <Button onClick={this.props.retakePhoto} color="color1">Retake</Button>
               </div>
             </div>
           </div>

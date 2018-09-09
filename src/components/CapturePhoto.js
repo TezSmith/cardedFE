@@ -28,7 +28,7 @@ class CapturePhoto extends Component {
         <div id="cameraImage">
         <Webcam audio={false} ref={this.setRef} screenshotFormat="image/jpeg" videoConstraints={videoConstraints}/>
         <br/>
-        <Button onClick={this.capture} color="color2">Take Photo</Button>
+        <Button onClick={this.capture} color="color1">Take Photo</Button>
         </div>
       </div>
     )

@@ -21,7 +21,7 @@ class CollectionContainer extends Component {
      let style = {
       width: '90%',
       margin: 'auto',
-      paddingTop: '50px'
+      paddingTop: '25px'
     }
 
     return (
@@ -29,7 +29,7 @@ class CollectionContainer extends Component {
             <div id="collections">
             <h2>{collection_name}</h2>
             <div style={style}>
-              <Grid relaxed columns={4}>
+              <Grid columns={3}>
                 <Grid.Row>
                   <Grid.Column>
                     {results[0]}
@@ -40,30 +40,33 @@ class CollectionContainer extends Component {
                   <Grid.Column>
                     {results[2]}
                   </Grid.Column>
-                  <Grid.Column>
-                    {results[3]}
-                  </Grid.Column>
                 </Grid.Row>
 
                 <Grid.Row>
+                  <Grid.Column>
+                    {results[3]}
+                  </Grid.Column>
                   <Grid.Column>
                     {results[4]}
                   </Grid.Column>
                   <Grid.Column>
                     {results[5]}
                   </Grid.Column>
+                </Grid.Row>
+
+                <Grid.Row>
                   <Grid.Column>
                     {results[6]}
                   </Grid.Column>
                   <Grid.Column>
                     {results[7]}
                   </Grid.Column>
-                </Grid.Row>
-
-                <Grid.Row>
                   <Grid.Column>
                     {results[8]}
                   </Grid.Column>
+                </Grid.Row>
+
+                <Grid.Row>
                   <Grid.Column>
                     {results[9]}
                   </Grid.Column>
@@ -84,24 +87,6 @@ class CollectionContainer extends Component {
                   </Grid.Column>
                   <Grid.Column>
                     {results[14]}
-                  </Grid.Column>
-                  <Grid.Column>
-                    {results[15]}
-                  </Grid.Column>
-                </Grid.Row>
-
-                <Grid.Row>
-                  <Grid.Column>
-                    {results[16]}
-                  </Grid.Column>
-                  <Grid.Column>
-                    {results[17]}
-                  </Grid.Column>
-                  <Grid.Column>
-                    {results[18]}
-                  </Grid.Column>
-                  <Grid.Column>
-                    {results[19]}
                   </Grid.Column>
                 </Grid.Row>
 
