@@ -112,7 +112,6 @@ export function convertImg(imageSrc) {
       body: JSON.stringify(values),
       headers: {"Content-Type": "application/json"}
     }).then(res => res.json()).then(res => {
-      console.log("the result",res)
         dispatch({ type: "ADD_CARD", payload: res.data.attributes })
       }
     )

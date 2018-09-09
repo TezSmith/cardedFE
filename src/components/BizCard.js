@@ -5,8 +5,10 @@ export default class BizCard extends Component {
 
   render(){
 
-    const {card_name, line1, line2, line3, line4, line5 } = this.props.card
-    const description = [line1, line2, line3, line4, line5].join("\n")
+    const {line1, line2, line3, line4, line5 } = this.props.card
+    const card_name = this.props.card.card_name || this.props.card["card-name"]
+    const collection_name = this.props.card.collection_name || this.props.card["collection-name"]
+    const description = [line1, line2, line3, line4, line5].join(" \n ")
 
     return (
 
@@ -16,7 +18,7 @@ export default class BizCard extends Component {
             <Card.Content description={description} />
             <Card.Content extra>
               <Icon name='user' />
-              4 Friends
+              Will give users ability to delete.
             </Card.Content>
           </Card>
         </div>

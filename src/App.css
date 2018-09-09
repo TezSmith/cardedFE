@@ -57,7 +57,7 @@ a:hover {
 
 #newCardCont {
   background-color: #FAF3DD!important;
-  height: 130vh;
+  height: 175vh;
 }
 
 #photo {
@@ -93,7 +93,7 @@ input {
 
 
 #collections {
-  padding-top: 50px;
+  padding-top: 25px;
 }
 
 .bizcard {

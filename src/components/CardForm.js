@@ -1,17 +1,17 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-import { Select } from 'semantic-ui-react'
 import { Button } from 'semantic-ui-react'
 import { InputField, SelectField } from 'react-semantic-redux-form';
 import {connect} from 'react-redux'
 
 const collectionOptions = [{
-  value: 'Employers', text: 'Employers', key: 'Employers',
+  value: 'Employers', text: 'Employers'
 }, {
-  value: 'Partners', text: 'Partners', key: 'Partners',
+  value: 'Partners', text: 'Partners'
 }, {
-  value: 'Others', text: 'Others', key: 'Others',
+  value: 'Others', text: 'Others'
 }]
+
 
 
 const CardForm = (props) => {
@@ -26,7 +26,7 @@ const CardForm = (props) => {
          <h4>Line 4: <Field type="text" name="line4" component={InputField} placeholder={line4} /></h4>
          <h4>Line 5: <Field type="text" name="line5" component={InputField} placeholder={line5} /></h4>
          <h4>Name Your Card: <Field type="text" name="card_name" component={InputField}/></h4>
-         <h4>Add To Collection: <Select name="collection_name" component={SelectField} options={collectionOptions} /></h4>
+         <h4>Add To Collection: <Field name="collection_name" component={SelectField} options={collectionOptions} /></h4>
          <Button type="submit" value="submit" primary>Save Card</Button>
       </form>
       </div>
