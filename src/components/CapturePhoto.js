@@ -18,16 +18,18 @@ class CapturePhoto extends Component {
   render() {
 
     const videoConstraints = {
-    width: 1280,
-    height: 720,
-    facingMode: 'environment',
+      width: 1600,
+      height: 900,
+      facingMode: 'environment',
     }
 
     return (
       <div id="capturePhoto">
+        <div id="cameraImage">
         <Webcam audio={false} ref={this.setRef} screenshotFormat="image/jpeg" videoConstraints={videoConstraints}/>
         <br/>
         <Button onClick={this.capture} color="color2">Take Photo</Button>
+        </div>
       </div>
     )
   }

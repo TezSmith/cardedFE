@@ -29,6 +29,7 @@ a:hover {
   font-weight: normal;
 }
 
+/* Removes spacing from underneath the navigation menu */
 .ui.menu {
   margin: 0;
 }
@@ -49,6 +50,11 @@ a:hover {
    height: 120vh;
 }
 
+#cameraImage {
+  position: relative;
+  top: 75px;
+}
+
 #newCardCont {
   background-color: #FAF3DD!important;
   height: 130vh;
@@ -56,26 +62,6 @@ a:hover {
 
 #photo {
   padding-top: 50px;
-}
-
-.newCard  {
-  border: 1px solid #000;
-  border-radius: 5px;
-  width: 650px;
-  height: 400px;
-  margin: 0 auto;
-  margin-top: 10px;
-  text-align: center;
-}
-
-.bizcard {
-  border: 1px solid #000;
-  border-radius: 5px;
-  width: 300px;
-  height: 200px;
-  margin: 0 auto;
-  margin-top: 10px;
-  text-align: center;
 }
 
 input {
@@ -95,12 +81,24 @@ input {
   background-color: transparent;
 }
 
-.formCont .ui.input>input>text {
-
-}
-
 ::placeholder {
   color: #000;
+}
+
+.cardsCont {
+  background-color: #EF7B45;
+  z-index: -100;
+  padding-bottom: 50px;
+}
+
+
+#collections {
+  padding-top: 50px;
+}
+
+.bizcard {
+  margin: 0 auto;
+  margin-top: 10px;
 }
 
 #cardText {

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import BizCard from './BizCard'
 import {connect} from 'react-redux'
+import { Grid } from 'semantic-ui-react'
 
 class CollectionContainer extends Component {
 
@@ -18,7 +19,7 @@ class CollectionContainer extends Component {
 
     return (
           <div>
-            <div className="collections">
+            <div id="collections">
             <h2>{collection_name} </h2>
             {collectionCards.map(card => { return <BizCard key={card.id} card={card} /> } )}
             </div>
