@@ -15,7 +15,7 @@ class CardsContainer extends Component {
       const { newCard } = this.props
 
     return (
-          <div>
+          <div className="cardsCont">
             {newCard ? <div className="lastCard">
               <h2>Your Latest Card</h2>
               <BizCard card={newCard} />

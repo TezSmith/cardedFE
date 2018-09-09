@@ -1,21 +1,47 @@
 import React from 'react'
-import { Field, reduxForm } from 'redux-form'
 import {connect} from 'react-redux'
+import { Field, reduxForm } from 'redux-form'
+import { InputField } from 'react-semantic-redux-form';
+import { Button, Form, Grid, Segment } from 'semantic-ui-react'
 
 const SignupForm = (props) => {
   const { handleSubmit, toggleSignup } = props
 
   return (
-    <form onSubmit={handleSubmit}>
-       <h4>Name: <Field type="name" name="name" component="input" /></h4>
-       <h4>Username: <Field type="username" name="username" component="input" /></h4>
-       <button type="submit" value="submit">Signup</button>
-       <br/>
-       <a onClick={toggleSignup}>Already Have An Account?</a>
-    </form>
+
+    <div className='signup-form'>
+
+     <style>{`
+       body > div,
+       body > div > div,
+       body > div > div > div.login-form {
+         height: 100%;
+       }
+     `}</style>
+
+   <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
+     <Grid.Column style={{ maxWidth: 450 }}>
+
+       <Form onSubmit={handleSubmit}>
+         <Segment stacked>
+          <h4><Field type="name" name="name" component={InputField} placeholder="Name"/></h4>
+          <h4><Field type="username" name="username" component={InputField} placeholder="Username"/></h4>
+          <Button type="submit" value="submit" color="color1" fluid size="large">Signup</Button>
+          <br/>
+          <a onClick={toggleSignup}>Already Have An Account?</a>
+          </Segment>
+       </Form>
+
+     </Grid.Column>
+   </Grid>
+ </div>
+
   )
 
 }
+
+
+
 
 const mapStateToProps = (state, ownProps) => {
   return {

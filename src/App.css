@@ -6,20 +6,56 @@
   text-align: center;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
+/* Dark Orange */
 a {
-  margin-top: 5px;
-  text-decoration: underline;
+  color: #EF7B45;
+}
+/* Pumpkin Color */
+a:hover {
+  color: #D84727;
 }
 
-.navbar {
+/* Login & Signup Form Button - Dark Orange */
+.ui.button.color1 {
+  background-color: #D84727;
+  color: #fff;
+  font-weight: normal;
+}
 
+/* Camera Button Color - Pumpkin Color */
+.ui.button.color2 {
+  background-color: #EF7B45;
+  color: #fff;
+  font-weight: normal;
+}
+
+.ui.menu {
+  margin: 0;
+}
+
+/* Styles the component behind the signup form */
+.accountCont {
+  background-color: #5EB1BF;
+  height: 105vh;
+}
+
+.signup-form, .login-form {
+  position: relative;
+  top: 200px;
+}
+
+#capturePhoto {
+   background-color: #5EB1BF ;
+   height: 120vh;
+}
+
+#newCardCont {
+  background-color: #FAF3DD!important;
+  height: 130vh;
+}
+
+#photo {
+  padding-top: 50px;
 }
 
 .newCard  {
@@ -51,11 +87,16 @@ input {
 }
 
 /* Styles Form */
-.ui.input>input {
-  padding: .54em 5em;
+.formCont .ui.input>input {
+  width: 500px;
   border: none;
   border-radius: 0px;
   border-bottom: 1px solid #000;
+  background-color: transparent;
+}
+
+.formCont .ui.input>input>text {
+
 }
 
 ::placeholder {

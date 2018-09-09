@@ -29,7 +29,7 @@ class AccountContainer extends Component {
    render() {
 
      return(
-       <div>
+       <div className="accountCont">
          { this.state.showSignup ? <SignupForm onSubmit={this.submitSignup} toggleSignup={this.toggleSignup}/> : <LoginForm onSubmit={this.submitLogin} toggleLogin={this.toggleSignup}/> }
        </div>
      )

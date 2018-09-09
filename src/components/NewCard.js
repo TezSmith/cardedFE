@@ -18,8 +18,8 @@ class NewCard extends Component {
     const {imgData} = this.props
 
     return (
-         <div>
-           <div className="newCardCont">
+         <div id="newCardCont">
+           <div id="photo">
              <img src={imgData} alt=""/>
               <div>
               <div id="cardText">

@@ -9,7 +9,7 @@ class CameraContainer extends Component {
    render() {
 
      return(
-       <div>
+       <div className="camera">
          { this.props.imgData ? <NewCard /> : <CapturePhoto /> }
        </div>
      )

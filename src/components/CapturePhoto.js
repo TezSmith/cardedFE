@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Webcam from 'react-webcam'
 import {connect} from 'react-redux'
 import {convertImg} from '../actions'
+import { Button } from 'semantic-ui-react'
 
 class CapturePhoto extends Component {
 
@@ -19,14 +20,14 @@ class CapturePhoto extends Component {
     const videoConstraints = {
     width: 1280,
     height: 720,
-    facingMode: 'user',
+    facingMode: 'environment',
     }
 
     return (
-      <div className="Camera">
+      <div id="capturePhoto">
         <Webcam audio={false} ref={this.setRef} screenshotFormat="image/jpeg" videoConstraints={videoConstraints}/>
         <br/>
-        <button onClick={this.capture}>Take Photo</button>
+        <Button onClick={this.capture} color="color2">Take Photo</Button>
       </div>
     )
   }
