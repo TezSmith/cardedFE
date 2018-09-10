@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import { Field, reduxForm } from 'redux-form'
 import { InputField } from 'react-semantic-redux-form';
-import { Button, Form, Grid, Segment } from 'semantic-ui-react'
+import { Header, Button, Form, Grid, Segment } from 'semantic-ui-react'
 
 
 const LoginForm = (props) => {
