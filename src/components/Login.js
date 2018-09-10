@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import { Field, reduxForm } from 'redux-form'
 import { InputField } from 'react-semantic-redux-form';
 import { Header, Button, Form, Grid, Segment } from 'semantic-ui-react'
+import carded from '../cardedv2.jpg'
 
 
 const LoginForm = (props) => {
