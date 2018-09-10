@@ -4,7 +4,7 @@ import $ from 'jquery'
 export function registerUser(values) {
   return dispatch => {
 
-    fetch("http://localhost:3000/api/v1/signup", {
+    fetch("https://carded-backend.herokuapp.com/api/v1/signup", {
        method: 'POST',
        body: JSON.stringify(values),
        headers: {"Content-Type": "application/json"}
@@ -19,7 +19,7 @@ export function registerUser(values) {
 export function getUser(values) {
   return dispatch => {
 
-    fetch("http://localhost:3000/api/v1/login", {
+    fetch("https://carded-backend.herokuapp.com/api/v1/login", {
        method: 'POST',
        body: JSON.stringify(values),
        headers: {"Content-Type": "application/json"}
@@ -107,7 +107,7 @@ export function convertImg(imageSrc) {
 
  export function createCard(values) {
    return dispatch => {
-   fetch("http://localhost:3000/api/v1/bizcards", {
+   fetch("https://carded-backend.herokuapp.com/api/v1/bizcards", {
       method: 'POST',
       body: JSON.stringify(values),
       headers: {"Content-Type": "application/json"}
