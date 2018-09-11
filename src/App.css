@@ -6,6 +6,11 @@
   text-align: center;
 }
 
+.welcomeLogo {
+  display: block;
+  margin: 0 auto;
+}
+
 /* Login Link Color - Ice Blue */
 a {
   color: #23b5d3;
@@ -13,6 +18,15 @@ a {
 /* Login Hover Color - Seaweed */
 a:hover {
   color: #187d91;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Quicksand', sans-serif;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Login & Signup Form, Camera Button - Seaweed */
@@ -69,14 +83,14 @@ h2.ui.header {
 
 }
 
-#capturePhoto {
+#capturePhotoBackground {
    background-color: #23B5D3;
-   height: 120vh;
+   height: 100vh;
 }
 
-#cameraImage {
+#camera {
   position: relative;
-  top: 75px;
+  top: 50px;
 }
 
 #newCardCont {
@@ -129,15 +143,15 @@ input {
   box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
   webkit-box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
   background-color: #FFFFFA;
-  width: 100%;
+  min-width: 475px;
   min-height: 245px;
 }
 
 #cardText {
   position: relative;
   top: 25px;
-  padding-left: 7px;
-  padding-right: 7px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 #cardText > h4 {
@@ -153,7 +167,7 @@ input {
 
 /* Mobile App Design */
 
-@media only screen and (max-width: 480px) {
+/* @media only screen and (max-width: 480px) {
 
   .accountCont {
     margin: 0 auto;
@@ -171,4 +185,4 @@ input {
     z-index: 500;
   }
 
-}
+}  */

@@ -2,8 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import { Field, reduxForm } from 'redux-form'
 import { InputField } from 'react-semantic-redux-form';
-import { Header, Button, Form, Grid, Segment} from 'semantic-ui-react'
-// import carded from '../cardedv2.jpg'
+import { Header, Button, Form, Grid, Segment, Image} from 'semantic-ui-react'
+import carded from '../Homepage1.jpg'
 
 const SignupForm = (props) => {
   const { handleSubmit, toggleSignup } = props
@@ -22,6 +22,7 @@ const SignupForm = (props) => {
 
    <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
      <Grid.Column style={{ maxWidth: 450 }}>
+        <Image src={carded} className="welcomeLogo"/>
         <Header as='h2' color='white' textAlign='center'>
           Save Your Cards. Not The Clutter.
         </Header>
