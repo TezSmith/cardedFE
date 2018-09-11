@@ -79,10 +79,6 @@ h2.ui.header {
   z-index: 100;
 }
 
-.rcam {
-
-}
-
 #capturePhotoBackground {
    background-color: #23B5D3;
    height: 100vh;
@@ -177,12 +173,6 @@ input {
   .ui.form {
     width: 95%;
     margin: 0 auto;
-  }
-
-  .rcam {
-    width: 300px;
-    height: 100%;
-    z-index: 500;
   }
 
 }  */
