@@ -14,8 +14,8 @@ class App extends Component {
       <div className="App">
         {this.props.user.id !== 0 ? <NavBar/> :null }
           <Switch>
-            <Route exact path="/MyCards" render={(props) => <CardsContainer/>} />
-            <Route exact path="/" render={(props) => <HomeContainer/>} />
+            <Route path="/MyCards" component={CardsContainer} />
+            <Route path="/" component={HomeContainer} />
           </Switch>
       </div>
     )
