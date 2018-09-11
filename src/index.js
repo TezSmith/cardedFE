@@ -9,6 +9,9 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router} from 'react-router-dom';
 import thunk from 'redux-thunk';
 
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
+
 const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(thunk))
 console.log(store.getState())
 
