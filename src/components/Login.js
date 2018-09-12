@@ -24,13 +24,13 @@ const LoginForm = (props) => {
    <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
      <Grid.Column style={{ maxWidth: 450 }}>
      <Image src={carded} className="welcomeLogo"/>
-     <Header as='h2' color='white' textAlign='center'>
+     <Header as='h3' textAlign='center'>
           Save Your Cards. Not The Clutter.
         </Header>
        <Form onSubmit={handleSubmit}>
          <Segment stacked>
           <h4><Field type="username" name="username" component={InputField} placeholder="Username"/></h4>
-          <Button type="submit" value="submit" color='color1' fluid size="large">Login</Button>
+          <Button type="submit" value="submit" color='teal' fluid size="large">Login</Button>
           <br/>
           <a onClick={toggleLogin}>Don't Have An Account?</a>
           </Segment>

@@ -41,17 +41,25 @@ p {
 }
 
 /* Login & Signup Form, Camera Button - Seaweed */
-.ui.button.color1 {
+.ui.button.teal {
   background-color: #187d91;
   color: #fff;
   font-weight: normal;
 }
 
+.ui.button.teal:hover {
+  background-color: #187d91;
+}
+
 /* Save Form Button - Pink */
-.ui.button.color2 {
+.ui.button.violet {
   background-color: #D3235D;
   color: #fff;
   font-weight: normal;
+}
+
+.ui.button.violet:hover {
+  background-color: #D3235D;
 }
 
 /* Removes spacing from underneath the navigation menu */
@@ -75,15 +83,16 @@ p {
   width: 100%;
   height: 129vh;
   background-image: linear-gradient(120deg, #333, #333);
-  opacity: .3;
+  opacity: .45;
   z-index: 1;
 }
 
-h2.ui.header {
+h3.ui.header {
   color: #fff;
   text-shadow: 1px 1px #000;
   font-family: 'Quicksand', sans-serif;
   text-transform: uppercase;
+  font-size: 1.6em;
 }
 
 .signup-form, .login-form {
@@ -94,17 +103,26 @@ h2.ui.header {
 
 #capturePhotoBackground {
    background-color: #23B5D3;
-   height: 100vh;
+   height: 150vh;
+   text-align: center;
 }
 
 #camera {
   position: relative;
-  top: 50px;
+  top: 75px;
+}
+
+.rcam {
+  margin-top: 20px;
+}
+
+#camera-button {
+  margin-top: 20px;
 }
 
 #newCardCont {
   background-color: #FFFFFA!important;
-  height: 130vh;
+  height: 175vh;
 }
 
 #photoCont {
@@ -143,17 +161,14 @@ input {
 
 
 #collections {
-  padding: 30px 0px;
-}
-
-.ui.card {
+  padding-top: 20px;
 }
 
 .bizcard {
-  margin-top: 5px;
+  margin-top: 7px;
   border: 1px solid rgba(34,36,38,.15);
   border-radius: 5px;
-  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  box-shadow: 2px 4px 0px 0 rgba(34,36,38,.15);
   webkit-box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
   background-color: #FFFFFA;
   max-width: 100%;
@@ -163,8 +178,8 @@ input {
 #cardText {
   position: relative;
   top: 25px;
-  padding-left: 2px;
-  padding-right: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
   word-wrap: break-word;
 }
 
@@ -172,11 +187,13 @@ input {
   color: #D3235D;
 }
 
-.lastCard {
+#mycards {
   margin-top: 30px;
-  text-align: center;
-  display: inline-block;
+}
 
+.lastCard {
+  padding-top: 75px;
+  margin-bottom: 75px;
 }
 
 /* Mobile App Design */
@@ -194,6 +211,11 @@ input {
     font-size: 1.9em;
     line-height: 1.5;
     letter-spacing: 1px;
+  }
+
+  .rcam {
+    width: 85%;
+    height: 85%;
   }
 
   #photo {

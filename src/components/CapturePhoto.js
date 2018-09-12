@@ -24,10 +24,14 @@ class CapturePhoto extends Component {
     return (
       <div id="capturePhotoBackground">
         <div id="camera">
-            <p>Take a photo of your business card!</p>
-            <Webcam className="rcam" audio={false} height={320} width={320} ref={this.setRef} screenshotFormat="image/jpeg" videoConstraints={videoConstraints}/>
-            <br/>
-            <Button onClick={this.capture} color="color1">Take Photo</Button>
+            <h2>Get Started</h2>
+            <p>Take a photo of your business card.</p>
+            <p>Edit the details as necessary.</p>
+            <p>Add your card to a collection & save!</p>
+            <Webcam className="rcam" audio={false} height={480} width={640} ref={this.setRef} screenshotFormat="image/jpeg" videoConstraints={videoConstraints}/>
+            <div id="camera-button">
+              <Button onClick={this.capture} color="teal">Take Photo</Button>
+            </div>
         </div>
       </div>
     )

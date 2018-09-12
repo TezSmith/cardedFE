@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import BizCard from './BizCard'
 import CollectionContainer from './CollectionContainer'
 import {connect} from 'react-redux'
+import { Grid } from 'semantic-ui-react'
 
 class CardsContainer extends Component {
 
@@ -16,10 +17,19 @@ class CardsContainer extends Component {
 
     return (
           <div className="cardsCont">
-            {newCard ? <div className="lastCard">
-              <h2>Your New Card!</h2>
-              <BizCard card={newCard} />
-            </div> : null}
+          <h2 id="mycards">My Card Collections</h2>
+            {newCard ? <div className="lastCard"> <Grid stackable columns={3}>
+                  <Grid.Row>
+                    <Grid.Column>
+                    </Grid.Column>
+                    <Grid.Column>
+                      <h2>Your New Card!</h2>
+                      <BizCard card={newCard} />
+                    </Grid.Column>
+                    <Grid.Column>
+                    </Grid.Column>
+                  </Grid.Row>
+                </Grid> </div> : null }
             {collections.map(collection => { return <CollectionContainer key={collection.id} collection={collection} /> } )}
           </div>
      )

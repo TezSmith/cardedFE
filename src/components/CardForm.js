@@ -27,7 +27,7 @@ const CardForm = (props) => {
          <h4>Line 5: <Field type="text" name="line5" component={InputField} placeholder={line5} /></h4>
          <h4>Name Your Card: <Field type="text" name="card_name" component={InputField}/></h4>
          <h4>Add To Collection: <Field name="collection_name" component={SelectField} options={collectionOptions} /></h4>
-         <Button type="submit" value="submit" color="color2">Save Card</Button>
+         <Button type="submit" value="submit" color="violet">Save Card</Button>
       </form>
       </div>
     )
