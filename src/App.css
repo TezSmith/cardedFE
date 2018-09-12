@@ -139,7 +139,7 @@ input {
   box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
   webkit-box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
   background-color: #FFFFFA;
-  min-width: 475px;
+  max-width: 100%;
   min-height: 245px;
 }
 

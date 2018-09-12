@@ -29,7 +29,7 @@ class CollectionContainer extends Component {
             <div id="collections">
             <h2>{collection_name}</h2>
             <div style={style}>
-              <Grid columns={3}>
+              <Grid stackable columns={3}>
                 <Grid.Row>
                   <Grid.Column>
                     {results[0]}
