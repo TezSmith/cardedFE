@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Webcam from 'react-webcam'
 import {connect} from 'react-redux'
 import {convertImg} from '../actions'
-import { Button, Grid } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 
 class CapturePhoto extends Component {
 

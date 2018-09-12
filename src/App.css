@@ -29,6 +29,17 @@ p {
   font-family: 'Roboto', sans-serif;
 }
 
+.ui.form {
+  font-family: 'Roboto', sans-serif;
+}
+
+.ui.fluid.button {
+  text-transform: uppercase;
+  font-family: 'Quicksand', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 /* Login & Signup Form, Camera Button - Seaweed */
 .ui.button.color1 {
   background-color: #187d91;
@@ -71,6 +82,8 @@ p {
 h2.ui.header {
   color: #fff;
   text-shadow: 1px 1px #000;
+  font-family: 'Quicksand', sans-serif;
+  text-transform: uppercase;
 }
 
 .signup-form, .login-form {
@@ -169,6 +182,19 @@ input {
 /* Mobile App Design */
 
 @media only screen and (max-width: 480px) {
+
+  .signup-form, .login-form  {
+    position: relative;
+    top: 50px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  h2.ui.header {
+    font-size: 1.9em;
+    line-height: 1.5;
+    letter-spacing: 1px;
+  }
 
   #photo {
     width: 90%;
