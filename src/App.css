@@ -99,7 +99,7 @@ h2.ui.header {
 }
 
 #photo {
-  width: 100%;
+  max-width: 100%;
 }
 
 input {
@@ -152,6 +152,7 @@ input {
   top: 25px;
   padding-left: 2px;
   padding-right: 2px;
+  word-wrap: break-word;
 }
 
 #cardText > h4 {
@@ -167,16 +168,18 @@ input {
 
 /* Mobile App Design */
 
-/* @media only screen and (max-width: 480px) {
+@media only screen and (max-width: 480px) {
 
-  .accountCont {
-    margin: 0 auto;
+  #photo {
+    width: 90%;
+  }
+
+  .formCont {
     width: 100%;
   }
 
-  .ui.form {
-    width: 95%;
-    margin: 0 auto;
+  .formCont .ui.input {
+    width: 90%;
   }
 
-}  */
+}
