@@ -94,8 +94,12 @@ h2.ui.header {
   height: 130vh;
 }
 
-#photo {
+#photoCont {
   padding-top: 50px;
+}
+
+#photo {
+  width: 100%;
 }
 
 input {

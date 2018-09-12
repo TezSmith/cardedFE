@@ -19,8 +19,8 @@ class NewCard extends Component {
 
     return (
          <div id="newCardCont">
-           <div id="photo">
-             <img src={imgData} alt=""/>
+           <div id="photoCont">
+             <img src={imgData} alt="" id="photo"/>
               <div>
               <div id="cardText">
                <CardForm onSubmit={this.submit}/>
