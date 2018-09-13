@@ -17,7 +17,7 @@ class CardsContainer extends Component {
 
     return (
           <div className="cardsCont">
-          <h2 id="mycards">My Card Collections</h2>
+          <h2 id="mycards">My Cards</h2>
             {newCard ? <div className="lastCard"> <Grid stackable columns={3}>
                   <Grid.Row>
                     <Grid.Column>

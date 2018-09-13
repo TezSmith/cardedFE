@@ -161,7 +161,7 @@ input {
 
 
 #collections {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .bizcard {
@@ -189,6 +189,8 @@ input {
 
 #mycards {
   margin-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(34,36,38,.15);
 }
 
 .lastCard {
@@ -228,6 +230,10 @@ input {
 
   .formCont .ui.input {
     width: 90%;
+  }
+
+  #collections {
+    padding-top: 5px;
   }
 
 }
