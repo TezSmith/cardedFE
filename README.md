@@ -13,4 +13,5 @@ Backend hosted on Heroku
 Frontend hosted on Firebase
 
 <h3>Creator</h3>
+
 Montez Smith. &copy; 2018. All rights reserved.
