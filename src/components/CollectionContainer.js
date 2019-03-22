@@ -13,7 +13,7 @@ class CollectionContainer extends Component {
     // filter bizcards by collection id - then map the filteredCards to list <BizCard />s
 
 
-     const {collection_name} = this.props.collection
+     const { collection_name } = this.props.collection
      const bizcards = this.props.user.bizcards
      let collectionCards = bizcards.filter(b => b.collection_id === this.props.collection.id )
      let results = collectionCards.map(card => { return <BizCard key={card.id} card={card} /> })

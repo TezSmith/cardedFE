@@ -12,5 +12,5 @@ import thunk from 'redux-thunk';
 const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(thunk))
 console.log(store.getState())
 
-ReactDOM.render(<Provider store={store}><Router><Route path='/' component={App}/></Router></Provider>, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><Router><App/></Router></Provider>, document.getElementById('root'));
 registerServiceWorker();
