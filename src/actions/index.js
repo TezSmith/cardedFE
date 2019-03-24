@@ -24,7 +24,6 @@ export function getUser(values) {
        body: JSON.stringify(values),
        headers: {"Content-Type": "application/json"}
      }).then(res => res.json()).then(res => {
-       console.log(res)
        dispatch({type: "UPDATE_USER", payload: {id: res.data.id, username: res.data.attributes.username, bizcards: res.data.attributes.bizcards, collections: res.data.attributes.collections } })
        }
      )
@@ -114,7 +113,6 @@ export function convertImg(imageSrc) {
       headers: {"Content-Type": "application/json"}
     }).then(res => res.json()).then(res => {
         dispatch({ type: "ADD_CARD", payload: res.data.attributes })
-        console.log("new card", res.data.attributes)
       }
     )
     dispatch({ type: "CLEAR_IMGDATA"})
@@ -131,6 +129,9 @@ export function convertImg(imageSrc) {
         body: JSON.stringify(id),
         headers: {"Content-Type": "application/json"}
       }).then(res => res.json())
+      .then(res => {
+        dispatch({type: "REMOVE_CARD", payload: res})
+      })
 
    }
  }

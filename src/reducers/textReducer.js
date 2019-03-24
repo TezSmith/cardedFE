@@ -9,7 +9,10 @@ const initialTextState = {
   newCard: null
 }
 
+
 const textReducer = (state = initialTextState, action) => {
+
+
   switch(action.type) {
 
     case "UPDATE_USER":
@@ -64,6 +67,15 @@ const textReducer = (state = initialTextState, action) => {
     return {
       ...state,
       newCard: action.payload
+    }
+
+    case "REMOVE_CARD":
+
+    const cards = state.user.bizcards.filter(card => card.id !== parseInt(action.payload.data.id))
+
+    return {
+      ...state,
+      user: {...state.user, bizcards: cards /*{...state.user.bizcards}*/}
     }
 
     case "CLEAR_STATE":
