@@ -10,7 +10,7 @@ const Navbar = (props) => {
    const startLogout = () => {
      handleLogout()
      props.history.replace('/')
-   }
+    }
 
   return (
       <Menu>
@@ -32,10 +32,4 @@ const Navbar = (props) => {
   )
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    user: {id: state.text.user.id, username: state.text.user.username, bizcards: state.text.user.bizcards, collections: state.text.user.collections }
-  }
-}
-
-export default withRouter(connect(mapStateToProps, {handleLogout})(Navbar))
+export default withRouter(connect(null, {handleLogout})(Navbar))

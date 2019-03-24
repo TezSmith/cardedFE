@@ -36,10 +36,4 @@ class AccountContainer extends Component {
    }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    user: {id: state.text.user.id, username: state.text.user.username, bizcards: state.text.user.bizcards, collections: state.text.user.collections }
-  }
-}
-
-export default connect(mapStateToProps, { registerUser, getUser })(AccountContainer)
+export default connect(null, { registerUser, getUser })(AccountContainer)

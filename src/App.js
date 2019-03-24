@@ -24,7 +24,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: {id: state.text.user.id, username: state.text.user.username, bizcards: state.text.user.bizcards, collections: state.text.user.collections }
+    user: {id: state.text.user.id }
   }
 }
 

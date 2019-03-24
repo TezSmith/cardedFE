@@ -14,7 +14,7 @@ const HomeContainer = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    user: {id: state.text.user.id, username: state.text.user.username, collections: state.text.user.collections }
+    user: {id: state.text.user.id}
   }
 }
 

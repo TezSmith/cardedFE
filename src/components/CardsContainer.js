@@ -16,29 +16,29 @@ class CardsContainer extends Component {
       const { newCard } = this.props
 
     return (
-          <div className="cardsCont">
-          <h2 id="mycards">My Cards</h2>
-            {newCard ? <div className="lastCard"> <Grid stackable columns={3}>
-                  <Grid.Row>
-                    <Grid.Column>
-                    </Grid.Column>
-                    <Grid.Column>
-                      <h2>Your New Card!</h2>
-                      <BizCard card={newCard} />
-                    </Grid.Column>
-                    <Grid.Column>
-                    </Grid.Column>
-                  </Grid.Row>
-                </Grid> </div> : null }
-            {collections.map(collection => { return <CollectionContainer key={collection.id} collection={collection} /> } )}
-          </div>
+      <div className="cardsCont">
+      <h2 id="mycards">My Cards</h2>
+        {newCard ? <div className="lastCard"> <Grid stackable columns={3}>
+              <Grid.Row>
+                <Grid.Column>
+                </Grid.Column>
+                <Grid.Column>
+                  <h2>Your New Card!</h2>
+                  <BizCard card={newCard} />
+                </Grid.Column>
+                <Grid.Column>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid> </div> : null }
+        {collections.map(collection => { return <CollectionContainer key={collection.id} collection={collection} /> } )}
+      </div>
      )
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    user: {id: state.text.user.id, username: state.text.user.username, bizcards: state.text.user.bizcards, collections: state.text.user.collections },
+    user: {id: state.text.user.id, collections: state.text.user.collections },
     newCard: state.text.newCard
   }
 }
