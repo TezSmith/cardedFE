@@ -44,13 +44,4 @@ const SignupForm = (props) => {
 
 }
 
-
-
-
-const mapStateToProps = (state, ownProps) => {
-  return {
-    user_id: state.text.user_id
-  }
-}
-
-export default connect(mapStateToProps)( reduxForm({ form: 'signupform'})(SignupForm) )
+export default connect(null)( reduxForm({ form: 'signupform'})(SignupForm) )

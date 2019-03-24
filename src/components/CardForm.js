@@ -12,8 +12,6 @@ const collectionOptions = [{
   value: 'Others', text: 'Others'
 }]
 
-
-
 const CardForm = (props) => {
   const { handleSubmit, line1, line2, line3, line4, line5} = props
 
@@ -35,7 +33,6 @@ const CardForm = (props) => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    user: {id: state.text.user.id, username: state.text.user.username, bizcards: state.text.user.bizcards, collections: state.text.user.collections },
     initialValues: {
       user: {id: state.text.user.id, username: state.text.user.username},
       line1: state.text.line1,

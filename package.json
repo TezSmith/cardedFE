@@ -5,21 +5,23 @@
   "dependencies": {
     "history": "^4.7.2",
     "jquery": "^3.3.1",
-    "ocr-space-api": "^1.0.1",
     "merge": ">=1.2.1",
+    "ocr-space-api": "^1.0.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.5",
+    "react-scripts": "2.1.8",
     "react-semantic-redux-form": "^1.2.6",
     "react-webcam": "^1.0.1",
     "redux": "^4.0.0",
     "redux-form": "^7.4.2",
     "redux-multi": "^0.1.12",
+    "redux-promise-middleware": "^6.1.0",
     "redux-thunk": "^2.3.0",
     "semantic-ui-react": "^0.82.3",
-    "semantic-ui-redux-form-fields": "^1.0.1"
+    "semantic-ui-redux-form-fields": "^1.0.1",
+    "serviceworker-webpack-plugin": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -29,5 +31,11 @@
   },
   "devDependencies": {
     "redux-devtools-extension": "^2.13.5"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

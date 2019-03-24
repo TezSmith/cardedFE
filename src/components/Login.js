@@ -44,10 +44,5 @@ const LoginForm = (props) => {
 
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    user: {id: state.text.user.id, username: state.text.user.username, bizcards: state.text.user.bizcards, collections: state.text.user.collections }
-  }
-}
 
-export default connect(mapStateToProps)( reduxForm({ form: 'loginform'})(LoginForm) )
+export default connect(null)(reduxForm({ form: 'loginform'})(LoginForm))
