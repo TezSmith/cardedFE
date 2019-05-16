@@ -1,4 +1,4 @@
-import MYAPI from '../connectAPI.js'
+import MYAPI from './connectAPI.js'
 import $ from 'jquery'
 
 export function registerUser(values) {
