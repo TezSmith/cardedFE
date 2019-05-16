@@ -7,7 +7,7 @@ import carded from '../Homepage1.jpg'
 
 const SignupForm = (props) => {
   const { handleSubmit, toggleSignup } = props
-
+ 
   return (
 
     <div className='signup-form'>
@@ -30,6 +30,8 @@ const SignupForm = (props) => {
          <Segment stacked>
           <h4><Field type="name" name="name" component={InputField} placeholder="Name"/></h4>
           <h4><Field type="username" name="username" component={InputField} placeholder="Username"/></h4>
+          <h4><Field type="password" name="password" component={InputField} placeholder="Password" /></h4>
+          <h4><Field type="password_confirmation" name="password_confirmation" component={InputField} placeholder="Password Confirmation" /></h4>
           <Button type="submit" value="submit" color="teal" fluid size="large">Signup</Button>
           <br/>
           <a onClick={toggleSignup}>Already Have An Account?</a>

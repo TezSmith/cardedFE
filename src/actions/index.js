@@ -3,10 +3,10 @@ import $ from 'jquery'
 
 export function registerUser(values) {
   return dispatch => {
-
-    fetch("https://carded-backend.herokuapp.com/api/v1/signup", {
+    // https://carded-backend.herokuapp.com/api/v1/signup
+    fetch("http://localhost:3000/api/v1/signup", {
        method: 'POST',
-       body: JSON.stringify(values),
+       body: JSON.stringify({user: values}),
        headers: {"Content-Type": "application/json"}
      }).then(res => res.json()).then(res => {
          dispatch({type: "UPDATE_USER", payload: {id: res.data.id, username: res.data.attributes.username, bizcards: res.data.attributes.bizcards, collections: res.data.attributes.collections } })
@@ -19,9 +19,9 @@ export function registerUser(values) {
 export function getUser(values) {
   return dispatch => {
 
-    fetch("https://carded-backend.herokuapp.com/api/v1/login", {
+    fetch("http://localhost:3000/api/v1/login", {
        method: 'POST',
-       body: JSON.stringify(values),
+      body: JSON.stringify({ user: values }),
        headers: {"Content-Type": "application/json"}
      }).then(res => res.json()).then(res => {
        dispatch({type: "UPDATE_USER", payload: {id: res.data.id, username: res.data.attributes.username, bizcards: res.data.attributes.bizcards, collections: res.data.attributes.collections } })

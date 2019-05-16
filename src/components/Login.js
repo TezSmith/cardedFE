@@ -30,6 +30,7 @@ const LoginForm = (props) => {
        <Form onSubmit={handleSubmit}>
          <Segment stacked>
           <h4><Field type="username" name="username" component={InputField} placeholder="Username"/></h4>
+          <h4><Field type="password" name="password" component={InputField} placeholder="Password" /></h4>
           <Button type="submit" value="submit" color='teal' fluid size="large">Login</Button>
           <br/>
           <a onClick={toggleLogin}>Don't Have An Account?</a>

@@ -18,19 +18,15 @@ class AccountContainer extends Component {
     }))
   }
 
-  submitSignup = values => {
-    this.props.registerUser(values)
-  }
-
-  submitLogin = values => {
-    this.props.getUser(values)
+  handleSubmit = values => {
+    this.state.showSignup === true ? this.props.registerUser(values) : this.props.getUser(values)
   }
 
    render() {
 
      return(
        <div className="accountCont">
-         { this.state.showSignup ? <SignupForm onSubmit={this.submitSignup} toggleSignup={this.toggleSignup}/> : <LoginForm onSubmit={this.submitLogin} toggleLogin={this.toggleSignup}/> }
+         { this.state.showSignup ? <SignupForm onSubmit={this.handleSubmit} toggleSignup={this.toggleSignup}/> : <LoginForm onSubmit={this.handleSubmit} toggleLogin={this.toggleSignup}/> }
        </div>
      )
    }
