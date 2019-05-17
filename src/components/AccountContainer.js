@@ -8,7 +8,7 @@ import {registerUser, getUser} from '../actions'
 class AccountContainer extends Component {
 
   state = {
-    showSignup: true
+    showSignup: false
   }
 
   toggleSignup = (e) => {

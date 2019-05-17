@@ -18,7 +18,7 @@ export function registerUser(values) {
 
 export function getUser(values) {
   return dispatch => {
-
+    // https://carded-backend.herokuapp.com/api/v1/login
     fetch("http://localhost:3000/api/v1/login", {
        method: 'POST',
       body: JSON.stringify({ user: values }),
