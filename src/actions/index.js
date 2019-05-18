@@ -151,9 +151,10 @@ export function convertImg(imageSrc) {
         body: JSON.stringify(id),
         headers: {"Content-Type": "application/json"}
       }).then(res => res.json())
-      .then(
-        dispatch({type: "REMOVE_CARD", payload: id})
-      )
+      .then(res => {
+        console.log("Delete", res)
+        dispatch({type: "REMOVE_CARD", payload: res.card.id})
+      })
 
    }
  }
