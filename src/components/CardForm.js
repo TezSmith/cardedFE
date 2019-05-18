@@ -34,7 +34,6 @@ const CardForm = (props) => {
 const mapStateToProps = (state, ownProps) => {
   return {
     initialValues: {
-      user: {id: state.text.user.id, username: state.text.user.username},
       line1: state.text.line1,
       line2: state.text.line2,
       line3: state.text.line3,

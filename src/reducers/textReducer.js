@@ -71,12 +71,13 @@ const textReducer = (state = initialTextState, action) => {
 
     case "REMOVE_CARD":
 
-    const cards = state.user.bizcards.filter(card => card.id !== parseInt(action.payload.data.id))
-
     return {
       ...state,
-      user: {...state.user, bizcards: cards /*{...state.user.bizcards}*/}
-    }
+      user: {
+        ...state.user,
+        bizcards: {...state.user.bizcards.filter(card => card.id !== parseInt(action.payload.id))}
+      }
+    } 
 
     case "CLEAR_STATE":
     return initialTextState

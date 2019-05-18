@@ -12,10 +12,10 @@ export function registerUser(values) {
        body: JSON.stringify({user: values}),
        headers: {"Content-Type": "application/json"}
      }).then(res => res.json()).then(res => {
-       console.log("This is the signup info", res)
        let jwt = res.jwt
-       let id = jwtDecode(jwt)
-       dispatch({type: "UPDATE_USER", payload: {id: id, username: res.username, bizcards: res.bizcards, collections: res.collections } })
+       localStorage.setItem("token", jwt)
+       let user = jwtDecode(jwt)
+       dispatch({type: "UPDATE_USER", payload: {id: user.user_id, username: res.username, bizcards: res.bizcards, collections: res.collections } })
        }
      )
 
@@ -30,13 +30,13 @@ export function getUser(values) {
       body: JSON.stringify({ user: values }),
        headers: {"Content-Type": "application/json"}
      }).then(res => res.json()).then(res => {
-       console.log("This is the values after logging in", res)
        let jwt = res.jwt
-       let id = jwtDecode(jwt)
+       localStorage.setItem("token", jwt)
+       let user = jwtDecode(jwt)
        dispatch({
          type: "UPDATE_USER",
          payload: {
-           id: id,
+           id: user.user_id,
            username: res.username,
            bizcards: res.bizcards,
            collections: res.collections
@@ -123,10 +123,16 @@ export function convertImg(imageSrc) {
 
  export function createCard(values) {
    return dispatch => {
-   fetch("https://carded-backend.herokuapp.com/api/v1/bizcards", {
+    //  https://carded-backend.herokuapp.com/api/v1/bizcards
+   fetch("http://localhost:3000/api/v1/bizcards", {
       method: 'POST',
-      body: JSON.stringify(values),
-      headers: {"Content-Type": "application/json"}
+      body: JSON.stringify({
+        bizcard: values
+      }),
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Token": localStorage.getItem("token")
+      }
     }).then(res => res.json()).then(res => {
         dispatch({ type: "ADD_CARD", payload: res.data.attributes })
       }
@@ -139,15 +145,15 @@ export function convertImg(imageSrc) {
  export function deleteCard(id) {
 
    return dispatch => {
-
-     fetch("https://carded-backend.herokuapp.com/api/v1/bizcards/" + id, {
+      //https://carded-backend.herokuapp.com/api/v1/bizcards
+     fetch("http://localhost:3000/api/v1/bizcards/" + id, {
         method: 'DELETE',
         body: JSON.stringify(id),
         headers: {"Content-Type": "application/json"}
       }).then(res => res.json())
-      .then(res => {
-        dispatch({type: "REMOVE_CARD", payload: res})
-      })
+      .then(
+        dispatch({type: "REMOVE_CARD", payload: id})
+      )
 
    }
  }
