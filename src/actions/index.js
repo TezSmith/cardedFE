@@ -1,5 +1,8 @@
 import MYAPI from './connectAPI.js'
 import $ from 'jquery'
+import { resolve } from 'path';
+const jwtDecode = require('jwt-decode'); 
+
 
 export function registerUser(values) {
   return dispatch => {
@@ -9,7 +12,10 @@ export function registerUser(values) {
        body: JSON.stringify({user: values}),
        headers: {"Content-Type": "application/json"}
      }).then(res => res.json()).then(res => {
-         dispatch({type: "UPDATE_USER", payload: {id: res.data.id, username: res.data.attributes.username, bizcards: res.data.attributes.bizcards, collections: res.data.attributes.collections } })
+       console.log("This is the signup info", res)
+       let jwt = res.jwt
+       let id = jwtDecode(jwt)
+       dispatch({type: "UPDATE_USER", payload: {id: id, username: res.username, bizcards: res.bizcards, collections: res.collections } })
        }
      )
 
@@ -19,15 +25,25 @@ export function registerUser(values) {
 export function getUser(values) {
   return dispatch => {
     // https://carded-backend.herokuapp.com/api/v1/login
-    fetch("http://localhost:3000/api/v1/login", {
+    fetch("http://localhost:3000/login", {
        method: 'POST',
       body: JSON.stringify({ user: values }),
        headers: {"Content-Type": "application/json"}
      }).then(res => res.json()).then(res => {
-       dispatch({type: "UPDATE_USER", payload: {id: res.data.id, username: res.data.attributes.username, bizcards: res.data.attributes.bizcards, collections: res.data.attributes.collections } })
+       console.log("This is the values after logging in", res)
+       let jwt = res.jwt
+       let id = jwtDecode(jwt)
+       dispatch({
+         type: "UPDATE_USER",
+         payload: {
+           id: id,
+           username: res.username,
+           bizcards: res.bizcards,
+           collections: res.collections
+         }
+       })
        }
      )
-
   }
 }
 
