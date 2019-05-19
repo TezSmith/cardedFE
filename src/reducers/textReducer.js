@@ -65,7 +65,6 @@ const textReducer = (state = initialTextState, action) => {
     case "ADD_CARD":
     return {
       ...state,
-      newCard: action.payload,
       user: {
         ...state.user,
         bizcards: [...state.user.bizcards, action.payload]

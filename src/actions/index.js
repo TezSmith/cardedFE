@@ -153,6 +153,7 @@ export function convertImg(imageSrc) {
         headers: {"Content-Type": "application/json"}
       }).then(res => res.json())
       .then(res => {
+        console.log("this is the deleted card", res)
         dispatch({type: "REMOVE_CARD", payload: res.card.id})
       })
 
