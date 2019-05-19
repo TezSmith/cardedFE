@@ -3,24 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "history": "^4.7.2",
-    "jquery": "^3.3.1",
+    "history": "^4.9.0",
+    "jquery": "^3.4.1",
     "jwt-decode": "^2.2.0",
     "merge": ">=1.2.1",
     "ocr-space-api": "^1.0.1",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-redux": "^5.0.7",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.8",
     "react-semantic-redux-form": "^1.2.6",
-    "react-webcam": "^1.0.1",
-    "redux": "^4.0.0",
+    "react-webcam": "^1.1.1",
+    "redux": "^4.0.1",
     "redux-form": "^7.4.2",
     "redux-multi": "^0.1.12",
     "redux-promise-middleware": "^6.1.0",
     "redux-thunk": "^2.3.0",
-    "semantic-ui-react": "^0.82.3",
+    "semantic-ui-react": "^0.82.5",
     "semantic-ui-redux-form-fields": "^1.0.1",
     "serviceworker-webpack-plugin": "^1.0.1"
   },
@@ -31,7 +31,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "redux-devtools-extension": "^2.13.5"
+    "redux-devtools-extension": "^2.13.8"
   },
   "browserslist": [
     ">0.2%",
