@@ -134,7 +134,8 @@ export function convertImg(imageSrc) {
         "Access-Token": localStorage.getItem("token")
       }
     }).then(res => res.json()).then(res => {
-        dispatch({ type: "ADD_CARD", payload: res.data.attributes })
+
+        dispatch({ type: "ADD_CARD", payload: res.card})
       }
     )
     dispatch({ type: "CLEAR_IMGDATA"})
@@ -152,7 +153,6 @@ export function convertImg(imageSrc) {
         headers: {"Content-Type": "application/json"}
       }).then(res => res.json())
       .then(res => {
-        console.log("Delete", res)
         dispatch({type: "REMOVE_CARD", payload: res.card.id})
       })
 

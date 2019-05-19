@@ -13,7 +13,7 @@ class CardsContainer extends Component {
     // filter bizcards by collection id - then map the filteredCards to list <BizCard />s
 
       const collections = this.props.user.collections
-      const { newCard } = this.props
+      const newCard = this.props.user.bizcards.pop()
 
     return (
       <div className="cardsCont">
@@ -23,7 +23,7 @@ class CardsContainer extends Component {
                 <Grid.Column>
                 </Grid.Column>
                 <Grid.Column>
-                  <h2>Your New Card!</h2>
+                  <h2>Latest Contact</h2>
                   <BizCard card={newCard} />
                 </Grid.Column>
                 <Grid.Column>
@@ -38,8 +38,7 @@ class CardsContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: {id: state.text.user.id, collections: state.text.user.collections },
-    newCard: state.text.newCard
+    user: {id: state.text.user.id, bizcards: state.text.user.bizcards, collections: state.text.user.collections }
   }
 }
 
