@@ -8,6 +8,7 @@ const Navbar = (props) => {
    const {handleLogout} = props
 
    const startLogout = () => {
+     localStorage.removeItem("token")
      handleLogout()
      props.history.replace('/')
     }
@@ -28,7 +29,6 @@ const Navbar = (props) => {
          </Menu.Item>
          </Menu.Menu>
        </Menu>
-
   )
 }
 
