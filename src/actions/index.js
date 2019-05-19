@@ -134,7 +134,6 @@ export function convertImg(imageSrc) {
         "Access-Token": localStorage.getItem("token")
       }
     }).then(res => res.json()).then(res => {
-
         dispatch({ type: "ADD_CARD", payload: res.card})
       }
     )
@@ -149,11 +148,10 @@ export function convertImg(imageSrc) {
       //https://carded-backend.herokuapp.com/api/v1/bizcards
      fetch("http://localhost:3000/api/v1/bizcards/" + id, {
         method: 'DELETE',
-        body: JSON.stringify(id),
+        body: JSON.stringify({id}),
         headers: {"Content-Type": "application/json"}
       }).then(res => res.json())
       .then(res => {
-        console.log("this is the deleted card", res)
         dispatch({type: "REMOVE_CARD", payload: res.card.id})
       })
 
