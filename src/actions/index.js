@@ -25,7 +25,7 @@ export function registerUser(values) {
 export function getUser(values) {
   return dispatch => {
     // https://carded-backend.herokuapp.com/api/v1/login
-    fetch("https://carded-backend.herokuapp.com/api/v1/login", {
+    fetch("https://carded-backend.herokuapp.com/login", {
        method: 'POST',
       body: JSON.stringify({ user: values }),
        headers: {"Content-Type": "application/json"}
@@ -33,15 +33,14 @@ export function getUser(values) {
        let jwt = res.jwt
        localStorage.setItem("token", jwt)
        let user = jwtDecode(jwt)
-       dispatch({
-         type: "UPDATE_USER",
-         payload: {
+       dispatch({ type: "UPDATE_USER",
+          payload: {
            id: user.user_id,
            username: res.username,
            bizcards: res.bizcards,
            collections: res.collections
-         }
-       })
+          }
+        })
        }
      )
   }
@@ -146,7 +145,7 @@ export function convertImg(imageSrc) {
 
    return dispatch => {
       //https://carded-backend.herokuapp.com/api/v1/bizcards
-     fetch("https://carded-backend.herokuapp.com/api/v1/bizcards" + id, {
+     fetch("https://carded-backend.herokuapp.com/api/v1/bizcards/" + id, {
         method: 'DELETE',
         body: JSON.stringify({id}),
         headers: {"Content-Type": "application/json"}
