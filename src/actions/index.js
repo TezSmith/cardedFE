@@ -1,13 +1,12 @@
 import MYAPI from './connectAPI.js'
 import $ from 'jquery'
 import { resolve } from 'path';
-const jwtDecode = require('jwt-decode'); 
+const jwtDecode = require('jwt-decode');
 
 
 export function registerUser(values) {
   return dispatch => {
-    // https://carded-backend.herokuapp.com/api/v1/signup
-    fetch("https://carded-backend.herokuapp.com/api/v1/signup", {
+    fetch("http://localhost:3000/api/v1/signup", {
        method: 'POST',
        body: JSON.stringify({user: values}),
        headers: {"Content-Type": "application/json"}
@@ -17,33 +16,37 @@ export function registerUser(values) {
        let user = jwtDecode(jwt)
        dispatch({type: "UPDATE_USER", payload: {id: user.user_id, username: res.username, bizcards: res.bizcards, collections: res.collections } })
        }
-     )
+     ).catch(res => {
+       console.log("errors", res)
+       dispatch({type: "ERROR_MESSAGE", payload: res.message})
+     })
 
   }
 }
 
 export function getUser(values) {
   return dispatch => {
-    // https://carded-backend.herokuapp.com/api/v1/login
-    fetch("https://carded-backend.herokuapp.com/api/v1/login", {
+    fetch("http://localhost:3000/login", {
        method: 'POST',
       body: JSON.stringify({ user: values }),
        headers: {"Content-Type": "application/json"}
      }).then(res => res.json()).then(res => {
        let jwt = res.jwt
-       localStorage.setItem("token", jwt)
-       let user = jwtDecode(jwt)
-       dispatch({
-         type: "UPDATE_USER",
-         payload: {
-           id: user.user_id,
-           username: res.username,
-           bizcards: res.bizcards,
-           collections: res.collections
-         }
-       })
-       }
-     )
+         localStorage.setItem("token", jwt)
+         let user = jwtDecode(jwt)
+         dispatch({
+           type: "UPDATE_USER",
+           payload: {
+             id: user.user_id,
+             username: res.username,
+             bizcards: res.bizcards,
+             collections: res.collections
+           }
+         })
+     }).catch(res => {
+       console.log(res.mes)
+       dispatch({type: "ERROR_MESSAGE", payload: res.message})
+     })
   }
 }
 
@@ -124,7 +127,7 @@ export function convertImg(imageSrc) {
  export function createCard(values) {
    return dispatch => {
     //  https://carded-backend.herokuapp.com/api/v1/bizcards
-   fetch("https://carded-backend.herokuapp.com/api/v1/bizcards", {
+   fetch("http://localhost:3000/api/v1/bizcards", {
       method: 'POST',
       body: JSON.stringify({
         bizcard: values
@@ -136,7 +139,10 @@ export function convertImg(imageSrc) {
     }).then(res => res.json()).then(res => {
         dispatch({ type: "ADD_CARD", payload: res.card})
       }
-    )
+    ).catch(res => {
+      console.log("errors", res)
+      dispatch({type: "ERROR_MESSAGE", payload: res.message})
+    })
     dispatch({ type: "CLEAR_IMGDATA"})
   }
 
@@ -145,14 +151,16 @@ export function convertImg(imageSrc) {
  export function deleteCard(id) {
 
    return dispatch => {
-      //https://carded-backend.herokuapp.com/api/v1/bizcards
-     fetch("https://carded-backend.herokuapp.com/api/v1/bizcards" + id, {
+     fetch("http://localhost:3000/api/v1/bizcards" + id, {
         method: 'DELETE',
         body: JSON.stringify({id}),
         headers: {"Content-Type": "application/json"}
       }).then(res => res.json())
       .then(res => {
         dispatch({type: "REMOVE_CARD", payload: res.card.id})
+      }).catch(res => {
+        console.log("errors", res)
+        dispatch({type: "ERROR_MESSAGE", payload: res.message})
       })
 
    }
