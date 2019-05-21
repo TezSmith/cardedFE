@@ -6,7 +6,7 @@ const initialTextState = {
   line3: '',
   line4: '',
   line5: '',
-  errors: {}
+  error: ''
 }
 
 
@@ -85,7 +85,7 @@ const textReducer = (state = initialTextState, action) => {
     case "ERROR_MESSAGE":
     return {
       ...state,
-      errors: action.payload
+      error: action.payload
     }
 
     case "CLEAR_STATE":
