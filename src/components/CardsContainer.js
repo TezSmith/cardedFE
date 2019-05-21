@@ -7,12 +7,11 @@ import { Grid } from 'semantic-ui-react'
 class CardsContainer extends Component {
 
   render() {
-   
+
       let bizcards = this.props.user.bizcards
-      console.log("These are the cards", bizcards)
       let results = bizcards.map(card => <BizCard key={card.id} card={card}/>)
       // let newCard = this.props.user.bizcards.pop()
-      
+
       // let collectionCards = bizcards.filter(b => b.collection_id === this.props.collection.id)
       // let results = collectionCards.map(card => <BizCard key={card.id} card={card}/>)
 

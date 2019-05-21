@@ -5,7 +5,8 @@ const initialTextState = {
   line2: '',
   line3: '',
   line4: '',
-  line5: ''
+  line5: '',
+  errors: {}
 }
 
 
@@ -72,14 +73,20 @@ const textReducer = (state = initialTextState, action) => {
     }
 
     case "REMOVE_CARD":
-    
+
     return {
       ...state,
       user: {
       ...state.user,
       bizcards: [...state.user.bizcards.filter(card => card.id !== action.payload)]
       }
-    } 
+    }
+
+    case "ERROR_MESSAGE":
+    return {
+      ...state,
+      errors: action.payload
+    }
 
     case "CLEAR_STATE":
     return initialTextState
