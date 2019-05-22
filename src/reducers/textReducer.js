@@ -6,7 +6,7 @@ const initialTextState = {
   line3: '',
   line4: '',
   line5: '',
-  errors: {}
+  errors: ''
 }
 
 

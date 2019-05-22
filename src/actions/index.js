@@ -44,8 +44,9 @@ export function getUser(values) {
            }
          })
      }).catch(res => {
-       console.log(res.mes)
-       dispatch({type: "ERROR_MESSAGE", payload: res.message})
+       console.log(res.message)
+       let message = "Username / Password combination is incorrect."
+       dispatch({type: "ERROR_MESSAGE", payload: message})
      })
   }
 }

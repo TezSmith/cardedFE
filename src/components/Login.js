@@ -45,5 +45,11 @@ const LoginForm = (props) => {
 
 }
 
+const mapStateToProps = (state) => {
+  return {
+    errors: state.text.errors
+  }
+}
 
-export default connect(null)(reduxForm({ form: 'loginform'})(LoginForm))
+
+export default connect(mapStateToProps)(reduxForm({ form: 'loginform'})(LoginForm))
