@@ -17,7 +17,7 @@ export function registerUser(values) {
        dispatch({type: "UPDATE_USER", payload: {id: user.user_id, username: res.username, bizcards: res.bizcards, collections: res.collections } })
        }
      ).catch(res => {
-       console.log("errors", res)
+       console.log("error: ", res)
        dispatch({type: "ERROR_MESSAGE", payload: res.message})
      })
 
@@ -44,9 +44,9 @@ export function getUser(values) {
            }
          })
      }).catch(res => {
-       console.log(res.message)
+       console.log("error: ", res.message)
        let message = "Username / Password combination is incorrect."
-       dispatch({type: "ERROR_MESSAGE", payload: message})
+       dispatch({type: "ERROR_MESSAGE", payload: message })
      })
   }
 }

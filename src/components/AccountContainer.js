@@ -3,6 +3,7 @@ import SignupForm from './Signup'
 import LoginForm from './Login'
 import {connect} from 'react-redux'
 import {registerUser, getUser} from '../actions'
+import DivWithErrorHandling from './ErrorHandle';
 
 
 class AccountContainer extends Component {
@@ -23,13 +24,23 @@ class AccountContainer extends Component {
   }
 
    render() {
-
      return(
+       
        <div className="accountCont">
-         { this.state.showSignup ? <SignupForm onSubmit={this.handleSubmit} toggleSignup={this.toggleSignup}/> : <LoginForm onSubmit={this.handleSubmit} toggleLogin={this.toggleSignup}/> }
-       </div>
+        <DivWithErrorHandling error={this.props.error}>
+         {this.state.showSignup ? <SignupForm onSubmit={this.handleSubmit} toggleSignup={this.toggleSignup} /> : <LoginForm onSubmit={this.handleSubmit} toggleLogin={this.toggleSignup}/> }
+         </DivWithErrorHandling>
+         </div>
+       
      )
    }
 }
 
-export default connect(null, { registerUser, getUser })(AccountContainer)
+const mapStateToProps = (state) => {
+  return {
+    error: state.text.error
+  }
+}
+
+
+export default connect(mapStateToProps, { registerUser, getUser })(AccountContainer)

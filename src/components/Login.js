@@ -6,6 +6,7 @@ import { Header, Button, Form, Grid, Segment, Image } from 'semantic-ui-react'
 import carded from '../Homepage1.jpg'
 
 
+
 const LoginForm = (props) => {
   const { handleSubmit, toggleLogin } = props
 
@@ -20,7 +21,7 @@ const LoginForm = (props) => {
          height: 100%;
        }
      `}</style>
-
+ 
    <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
      <Grid.Column style={{ maxWidth: 450 }}>
      <Image src={carded} className="welcomeLogo"/>
@@ -39,6 +40,7 @@ const LoginForm = (props) => {
 
      </Grid.Column>
    </Grid>
+
  </div>
 
   )
@@ -47,9 +49,10 @@ const LoginForm = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    errors: state.text.errors
+    errors: state.text.error
   }
 }
 
 
-export default connect(mapStateToProps)(reduxForm({ form: 'loginform'})(LoginForm))
+
+export default connect(null)(reduxForm({ form: 'loginform'})(LoginForm))
