@@ -82,6 +82,12 @@ const textReducer = (state = initialTextState, action) => {
       }
     }
 
+    // case "SHOW_ERROR":
+    // return {
+    //   ...state,
+    //   showError: !this.prevState.showError
+    // }
+
     case "ERROR_MESSAGE":
     return {
       ...state,

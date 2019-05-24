@@ -152,7 +152,7 @@ export function convertImg(imageSrc) {
  export function deleteCard(id) {
 
    return dispatch => {
-     fetch("http://localhost:3000/api/v1/bizcards" + id, {
+     fetch("http://localhost:3000/api/v1/bizcards/" + id, {
         method: 'DELETE',
         body: JSON.stringify({id}),
         headers: {"Content-Type": "application/json"}
