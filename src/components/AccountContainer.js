@@ -18,7 +18,7 @@ class AccountContainer extends Component {
       showSignup: !prevState.showSignup
     }))
   }
-  
+
 
   handleSubmit = values => {
     this.state.showSignup === true ? this.props.registerUser(values) : this.props.getUser(values)
@@ -28,7 +28,7 @@ class AccountContainer extends Component {
      return(
        
        <div className="accountCont">
-        <DivWithErrorHandling error={this.props.error} >
+        <DivWithErrorHandling error={this.props.error}>
          {this.state.showSignup ? <SignupForm onSubmit={this.handleSubmit} toggleSignup={this.toggleSignup} /> : <LoginForm onSubmit={this.handleSubmit} toggleLogin={this.toggleSignup}/> }
          </DivWithErrorHandling>
          </div>
