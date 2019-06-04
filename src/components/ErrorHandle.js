@@ -4,22 +4,24 @@ import { Message } from 'semantic-ui-react'
 const errorHandling = WrappedComponent => ({ error, children }) => {
      const [visible, setVisible] = useState(true);
 
-     const handleDismiss = () => {
-         console.log("Yo")
-     }
-     
+     // const handleDismiss = () => {
+     //     console.log("Yo")
+     // }
+
+     console.log('rendering higher order component')
+
      return (
          <WrappedComponent>
-            {error ? <Message onDismiss={handleDismiss} content={error}/> : null}
+            {visible ? <Message onDismiss={(e) => console.log('yo', e)} content={error}/> : null}
             {children}
         </WrappedComponent>
-        
+
     )
 }
 
 // const errorHandling = WrappedComponent => {
 //     return class extends Component {
-        
+
 //         state = {
 //             visible: true
 //         }
@@ -34,7 +36,7 @@ const errorHandling = WrappedComponent => ({ error, children }) => {
 //         render(){
 //             console.log("this is the error state: ", this.state)
 //             return (
-//                  <WrappedComponent>  
+//                  <WrappedComponent>
 //                     { this.props.error && this.state.visible ? <Message onDismiss={this.handleDismiss} content={this.props.error}/> : null }
 //                     { this.props.children }
 //                 </WrappedComponent>
@@ -42,7 +44,7 @@ const errorHandling = WrappedComponent => ({ error, children }) => {
 //         }
 //     }
 // }
-    
+
 const DivWithErrorHandling = errorHandling(({ children }) => <div>{children}</div>)
 
 export default DivWithErrorHandling
