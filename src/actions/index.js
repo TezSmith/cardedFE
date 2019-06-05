@@ -11,14 +11,21 @@ export function registerUser(values) {
        body: JSON.stringify({user: values}),
        headers: {"Content-Type": "application/json"}
      }).then(res => res.json()).then(res => {
-       let jwt = res.jwt
-       localStorage.setItem("token", jwt)
-       let user = jwtDecode(jwt)
-       dispatch({type: "UPDATE_USER", payload: {id: user.user_id, username: res.username, bizcards: res.bizcards, collections: res.collections } })
-       }
-     ).catch(res => {
-       console.log("error: ", res)
-       dispatch({type: "ERROR_MESSAGE", payload: res.message})
+       
+        let jwt = res.jwt
+
+        if (jwt === undefined) {
+          dispatch({ type: "ERROR_MESSAGE", payload: res.message })
+        } else {
+
+          localStorage.setItem("token", jwt)
+          let user = jwtDecode(jwt)
+          dispatch({type: "UPDATE_USER", payload: {id: user.user_id, username: res.username, bizcards: res.bizcards, collections: res.collections } })
+        
+        }
+      }).catch(res => {
+       let message = "Something went wrong. Please try again."
+       dispatch({ type: "ERROR_MESSAGE", payload: message })
      })
 
   }
@@ -31,21 +38,29 @@ export function getUser(values) {
       body: JSON.stringify({ user: values }),
        headers: {"Content-Type": "application/json"}
      }).then(res => res.json()).then(res => {
-       let jwt = res.jwt
-         localStorage.setItem("token", jwt)
-         let user = jwtDecode(jwt)
-         dispatch({
-           type: "UPDATE_USER",
-           payload: {
-             id: user.user_id,
-             username: res.username,
-             bizcards: res.bizcards,
-             collections: res.collections
-           }
-         })
+       
+        let jwt = res.jwt
+       
+        if (jwt === undefined ) { 
+          dispatch({ type: "ERROR_MESSAGE", payload: res.message })
+        } else {
+       
+          localStorage.setItem("token", jwt)
+          
+          let user = jwtDecode(jwt)
+          dispatch({
+              type: "UPDATE_USER",
+              payload: {
+                id: user.user_id,
+                username: res.username,
+                bizcards: res.bizcards,
+                collections: res.collections
+              }
+            })
+
+        }
      }).catch(res => {
-       console.log("error: ", res.message)
-       let message = "Username / Password combination is incorrect."
+       let message = "Something went wrong. Please try again."
        dispatch({type: "ERROR_MESSAGE", payload: message })
      })
   }
