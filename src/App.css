@@ -29,6 +29,10 @@ p {
   font-family: 'Roboto', sans-serif;
 }
 
+.ui.message {
+  z-index: 100;
+}
+
 .ui.form {
   font-family: 'Roboto', sans-serif;
 }
