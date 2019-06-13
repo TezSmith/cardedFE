@@ -141,7 +141,6 @@ export function convertImg(imageSrc) {
  }
 
  export function createCard(values) {
-   console.log("This is what it looks like wheen we create a card: ", values)
    return dispatch => {
     //  https://carded-backend.herokuapp.com/api/v1/bizcards
    fetch("http://localhost:3000/api/v1/bizcards", {
@@ -157,7 +156,6 @@ export function convertImg(imageSrc) {
         dispatch({ type: "ADD_CARD", payload: res.card})
       }
     ).catch(res => {
-      console.log("errors", res)
       dispatch({type: "ERROR_MESSAGE", payload: res.message})
     })
     dispatch({ type: "CLEAR_IMGDATA"})
@@ -173,7 +171,9 @@ export function convertImg(imageSrc) {
        body: JSON.stringify({ bizcard: values }),
        headers: { "Content-Type": "application/json", "Access-Token": localStorage.getItem("token") }
       }).then(res => res.json())
-      .then(console.log)
+      .then(res => {
+        dispatch({ type: "UPDATE_CARD", payload: res.card })
+      })
     }
 
  }
@@ -189,7 +189,6 @@ export function convertImg(imageSrc) {
       .then(res => {
         dispatch({type: "REMOVE_CARD", payload: res.card.id})
       }).catch(res => {
-        console.log("errors", res)
         dispatch({type: "ERROR_MESSAGE", payload: res.message})
       })
 

@@ -82,11 +82,20 @@ const textReducer = (state = initialTextState, action) => {
       }
     }
 
-    // case "SHOW_ERROR":
-    // return {
-    //   ...state,
-    //   showError: !this.prevState.showError
-    // }
+    case "UPDATE_CARD":
+      
+      let cards = [...state.user.bizcards]
+      let index = cards.findIndex(card => card.id === action.payload.id)
+      cards.splice(index,1,action.payload)
+    
+    return {
+      ...state,
+      user: {
+        ...state.user,
+        // bizcards: [...state.user.bizcards.map(card => card.id === action.payload.id ? action.payload : card)]
+        bizcards: cards
+      }
+    }
 
     case "ERROR_MESSAGE":
     return {

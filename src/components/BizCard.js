@@ -25,7 +25,7 @@ class BizCard extends Component {
   editCard = (e) => {
     this.setState({
       [e.target.name]: e.target.value
-    },() => console.log(this.state))
+    })
   }
 
   sendEdit = () => {
