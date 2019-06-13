@@ -38,14 +38,12 @@ class BizCard extends Component {
     delete values.id 
     
     let id = this.state.id 
-    this.handleEdit()
     this.props.updateCard(id, values)
+    this.handleEdit()
     
   }
 
   render(){
-
-    console.log("This is the card: ", this.props.card)
 
     const { card_name, line1, line2, line3, line4, line5, id } = this.state
 
@@ -67,10 +65,10 @@ class BizCard extends Component {
         <div id="cardText">
         <input type="text" name="card_name" placeholder={card_name} onBlur={(e) => this.editCard(e)}></input><br/>
           <input type="text" name="line1" placeholder={line1} onBlur={(e) => this.editCard(e)}></input><br/>
-          <input type="text" name="line2" placeholder={line2}></input><br/>
-          <input type="text" name="line3" placeholder={line3}></input><br/>
-          <input type="text" name="line4" placeholder={line4}></input><br/>
-          <input type="text" name="line5" placeholder={line5}></input>
+          <input type="text" name="line2" placeholder={line2} onBlur={(e) => this.editCard(e)}></input><br/>
+          <input type="text" name="line3" placeholder={line3} onBlur={(e) => this.editCard(e)}></input><br/>
+          <input type="text" name="line4" placeholder={line4} onBlur={(e) => this.editCard(e)}></input><br/>
+          <input type="text" name="line5" placeholder={line5} onBlur={(e) => this.editCard(e)}></input> <br/>
           <Button onClick={this.sendEdit} color="teal">Update Card</Button>
         </div>
       )
