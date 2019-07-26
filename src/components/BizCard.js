@@ -55,8 +55,8 @@ class BizCard extends Component {
         <p>{line3}</p>
         <p>{line4}</p>
         <p>{line5}</p>
-        <a href="#" onClick={() => { this.props.deleteCard(id) }}> Delete Card </a>
-        <a href="#" onClick={(e) => this.handleEdit(e)}> Edit Card </a>
+        <button onClick={() => { this.props.deleteCard(id) }}> Delete Card </button>
+        <button onClick={(e) => this.handleEdit(e)}> Edit Card </button>
       </div>)
     }
 

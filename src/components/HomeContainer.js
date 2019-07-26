@@ -2,6 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import AccountContainer from './AccountContainer'
 import CameraContainer from './CameraContainer'
+// import { Switch, Route, withRouter } from 'react-router-dom'
+
 
 const HomeContainer = (props) => {
 
