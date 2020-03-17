@@ -14,4 +14,4 @@ Frontend hosted on Firebase.
 
 <h3>License</h3>
 
-Montez Smith. &copy; 2018. All rights reserved.
+Montez Smith. &copy; 2020. All rights reserved.
